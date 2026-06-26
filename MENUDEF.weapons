@@ -1,0 +1,310 @@
+OptionMenu "VIR_Nailgun_Menu"
+{
+	Title "VIRID Inc. Electro Magnetic Nailgun"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Nailgun Spawn Weight (Chaingun Pool)", "SLG_Nailgun_Spawns", 0.0, 50, .01, 2
+	Slider "Nail Drum Spawn Weight (Clipbox Pool)", "SLG_NailgunMag_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Nailguns can Spawn in wild Backpacks?", "virnailgun_allowBackpacks", "SpawnEnable"
+	Option "Nail Drums can Spawn in wild Backpacks?", "virnailgunmag_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Nailgun persistent Spawns?", "SLG_Nailgun_Persistency", "SpawnEnable"
+	Option "Nail Drums persistent Spawns?", "SLG_NailgunMag_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Nailgun can be sold by Merchants?", "hdm_enable_Nailgun", "SpawnEnable"
+	Option "Nail Drums can be sold by Merchants?", "hdm_enable_nailgunmag", "SpawnEnable"
+	StaticText ""
+	Slider "Nailgun Price", "hdm_nailgun_price", 0.0, 5000, .01, 2
+	Slider "Nail Drum Price", "hdm_nailgunmag_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Nailgun Spawn Weight:", "White"
+	StaticText "SLG_Nailgun_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nailgun Merchant Price:", "White"
+	StaticText "hdm_Nailgun_price [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nail Drum Spawn Weight:", "White"
+	StaticText "SLG_NailgunMag_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nail Drum Merchant Price:", "White"
+	StaticText "hdm_nailgunmag_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_NailPistol_Menu"
+{
+	Title "VIRID Inc. Nail Pistol"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Nail Pistol Spawn Weight (Shotgun Pool)", "SLG_NailPistol_Spawns", 0.0, 50, .01, 2
+	Slider "Nail Pistol Spawn Weight (Enemy Pistol Drop)", "SLG_NailPistol_PistolDrops", 0.0, 50, .01, 2
+	Slider "Nail Magazine Spawn Weight (Clip Pool)", "SLG_NailPisMag_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Nail Pistols can Spawn in wild Backpacks?", "virnailpistol_allowBackpacks", "SpawnEnable"
+	Option "Nail Magazines can Spawn in wild Backpacks?", "virnailpismag_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Nail Pistol has persistent Spawns?", "SLG_NailPistol_Persistency", "SpawnEnable"
+	Option "Nail Magazines have persistent Spawns?", "SLG_NailPisMag_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Nail Pistol can be sold by Merchants?", "hdm_enable_Nailpistol", "SpawnEnable"
+	Option "Nail Magazines can be sold by Merchants?", "hdm_enable_nailpismag", "SpawnEnable"
+	StaticText ""
+	Slider "Nail Pistol Price", "hdm_nailpistol_price", 0.0, 5000, .01, 2
+	Slider "Nail Magazine Price", "hdm_nailpismag_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Nailgun Spawn Weight:", "White"
+	StaticText "SLG_NailPistol_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nail Pistol Enemy Drop Weight:", "White"
+	StaticText "SLG_NailPistol_PistolDrops [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nailgun Merchant Price:", "White"
+	StaticText "hdm_NailPistol_price [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nail Magazine Spawn Weight:", "White"
+	StaticText "SLG_NailPisMag_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Nail Magazine Merchant Price:", "White"
+	StaticText "hdm_nailpismag_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_Queen_Menu"
+{
+	Title "'Queen' .066 Bore Scattergun"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Scattergun Spawn Weight (Shotgun Pool)", "SLG_Queen_Spawns", 0.0, 50, .01, 2
+	Slider ".066 Magazine Spawn Weight (Shell Pool)", "SLG_QueenMag_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Scattergun can spawns in Backpacks?", "virqueen_allowBackpacks", "SpawnEnable"
+	Option ".066 Magazines can spawn in Backpacks?", "virqueenmag_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Scattergun has Persistent Spawns?", "SLG_Queen_Persistency", "SpawnEnable"
+	Option ".066 Magazines have Persistent Spawns?", "SLG_QueenMag_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Gun can be sold by Merchants?", "hdm_enable_queen", "SpawnEnable"
+	Option "Mags can be sold by Merchants?", "hdm_enable_queenmag", "SpawnEnable"
+	StaticText ""
+	Slider "Scattergun Price", "hdm_queen_price", 0.0, 5000, .01, 2
+	Slider ".066 Magazines Price", "hdm_queenmag_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Scattergun Spawn Weight:", "White"
+	StaticText "SLG_Queen_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Scattergun Merchant Price:", "White"
+	StaticText "hdm_queen_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ".066 Magazines Spawn Weight:", "White"
+	StaticText "SLG_QueenMag_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText ".066 Magazines Merchant Price:", "White"
+	StaticText "hdm_queenmag_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_Dumbo_Menu"
+{
+	Title "'Dumbo' 20mm Grenade Launcher"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (RocketLauncher Pool)", "SLG_Dumbo_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can spawn in Backpacks?", "virqueen_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Has Persistent Spawns?", "SLG_Dumbo_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_dumbo", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_dumbo_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_Dumbo_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_dumbo_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_Sabre_Menu"
+{
+	Title "Cavalry Sabre"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Sword Spawn Weight (Chainsaw Pool)", "SLG_Sabre_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Sword can spawn in Backpacks?", "virsabre_allowBackpacks", "SpawnEnable"
+	Option "Sheath can spawn in Backpacks?", "virsabresheath_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Sword has Persistent Spawns?", "SLG_Sabre_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Sword can be sold by Merchants?", "hdm_enable_sabre", "SpawnEnable"
+	Option "Sheath can be sold by Merchants?", "hdm_enable_sabresheath", "SpawnEnable"
+	StaticText ""
+	Slider "Sword Price", "hdm_sabre_price", 0.0, 5000, .01, 2
+	Slider "Sheath Price", "hdm_sabresheath_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Sword Spawn Weight:", "White"
+	StaticText "SLG_Sabre_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Sword Merchant Price:", "White"
+	StaticText "hdm_sabre_price [VALUE]", "Green"
+	StaticText ""
+	StaticText "Sheath Merchant Price:", "White"
+	StaticText "hdm_sabresheath_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_Cleaver_Menu"
+{
+	Title "Cleaver"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (Chainsaw Pool)", "SLG_Cleaver_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can spawn in Backpacks?", "vircleaver_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Has Persistent Spawns?", "SLG_Cleaver_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_cleaver", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_cleaver_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_Cleaver_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_cleaver_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_Wrench_Menu"
+{
+	Title "Pipe Wrench"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (Chainsaw Pool)", "SLG_Wrench_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can spawn in Backpacks?", "virwrench_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Has Persistent Spawns?", "SLG_Wrench_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_wrench", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_wrench_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_Wrench_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_wrench_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_Satya_Menu"
+{
+	Title "'Satya' 8mm Light Cannon"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (Shotgun Pool)", "SLG_Satya_Spawns", 0.0, 50, .01, 2
+	Slider "Spawn Weight (Enemy Pistol drops)", "SLG_Satya_PistolDrops", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can spawn in Backpacks?", "virsatya_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Has Persistent Spawns?", "SLG_Satya_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_satya", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_satya_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_Satya_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Enemy Drop Weight:", "White"
+	StaticText "SLG_Satya_PistolDrops [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_satya_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}

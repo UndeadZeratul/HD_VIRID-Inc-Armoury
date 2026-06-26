@@ -1,0 +1,197 @@
+// ----- Spawns -----
+//Nailgun + Mags
+addSpawnTableSingleEntry => { "tableName": "ChaingunReplaces", "name": "NailgunDrop", "weight": "#SLG_NailGun_Spawns", "persists": "#SLG_NailGun_Persistency"}
+addSpawnTableSingleEntry => { "tableName": "ClipBoxReplaces", "name": "VirNailGunMag", "weight": "#SLG_NailgunMag_Spawns", "persists": "#SLG_NailgunMag_Persistency"}
+
+//Satya
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "SatyaDrop", "weight": "#SLG_Satya_Spawns", "persists": "#SLG_Satya_Persistency"}
+
+//Nail Ammo
+addSpawnTableSingleEntry => { "tableName": "CellPackReplaces", "name": "VirNailBox", "weight": "#SLG_NailsCell_Spawns", "persists": "#SLG_Nails_Persistency"}
+addSpawnTableSingleEntry => { "tableName": "ShellBoxReplaces", "name": "VirNailBox", "weight": "#SLG_NailsShell_Spawns", "persists": "#SLG_Nails_Persistency"}
+
+//Queen + Mags
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "VirQueenDrop", "weight": "#SLG_Queen_Spawns", "persists": "#SLG_Queen_Persistency"}
+addSpawnTableSingleEntry => { "tableName": "ShellReplaces", "name": "VirQueenMag", "weight": "#SLG_QueenMag_Spawns", "persists": "#SLG_QueenMag_Persistency"}
+
+//Dumbo
+addSpawnTableSingleEntry => { "tableName": "RLReplaces", "name": "DumboDrop", "weight": "#SLG_Dumbo_Spawns", "persists": "#SLG_Dumbo_Persistency"}
+
+//Burn Heal
+addSpawnTableSingleEntry => { "tableName": "StimpackReplaces", "name": "VirBurnHeal", "weight": "#SLG_BurnHeal_Spawns", "persists": "#SLG_BurnHeal_Persistency"}
+
+//Babuin Spray
+addSpawnTableSingleEntry => { "tableName": "ArmorBonusReplaces", "name": "VirBabuSpray", "weight": "#SLG_BabusprayArmour_Spawns", "persists": "#SLG_Babuspray_Persistency" }
+addSpawnTableSingleEntry => { "tableName": "HealthBonusReplaces", "name": "VirBabuSpray", "weight": "#SLG_BabusprayHealth_Spawns", "persists": "#SLG_Babuspray_Persistency" }
+
+//Sabre
+addSpawnTableSingleEntry => { "tableName": "ChainsawReplaces", "name": "SabreDrop", "weight": "#SLG_Sabre_Spawns", "persists": "#SLG_Sabre_Persistency" }
+
+//Cleaver
+addSpawnTableSingleEntry => { "tableName": "ChainsawReplaces", "name": "HDCleaver", "weight": "#SLG_Cleaver_Spawns", "persists": "#SLG_Cleaver_Persistency" }
+
+//Wrench
+addSpawnTableSingleEntry => { "tableName": "ChainsawReplaces", "name": "HDPipeWrench", "weight": "#SLG_Wrench_Spawns", "persists": "#SLG_Wrench_Persistency" }
+
+//Shield Badge
+addSpawnTableSingleEntry => { "tableName": "ArmorBonusReplaces", "name": "VirShieldBadge", "weight": "#SLG_SBadge_Spawns", "persists": "#SLG_SBadge_Persistency" }
+
+//CO2 Grenade
+addSpawnTableSingleEntry => { "tableName": "RocketBoxReplaces", "name": "HDCO2GrenadePickup", "weight": "#SLG_CO2RocketBox_Spawns", "persists": "#SLG_CO2_Persistency" }
+addSpawnTableSingleEntry => { "tableName": "BlurSphereReplaces", "name": "HDCO2GrenadePickup", "weight": "#SLG_CO2BlurSphere_Spawns", "persists": "#SLG_CO2_Persistency" }
+addSpawnTableSingleEntry => { "tableName": "HealthBonusReplaces", "name": "HDCO2GrenadeAmmo", "weight": "#SLG_CO2HealthBonus_Spawns", "persists": "#SLG_CO2_Persistency" }
+addSpawnTableSingleEntry => { "tableName": "ArmorBonusReplaces", "name": "HDCO2GrenadeAmmo", "weight": "#SLG_CO2ArmourBonus_Spawns", "persists": "#SLG_CO2_Persistency" }
+
+//NailPistol & Mags
+addSpawnTableSingleEntry => { "tableName": "ClipReplaces", "name": "VirNailPistolMag", "weight": "#SLG_NailPisMag_Spawns", "persists": "#SLG_NailPisMag_Persistency"}
+addSpawnTableSingleEntry => { "tableName": "ShotgunReplaces", "name": "NailPistolDrop", "weight": "#SLG_NailPistol_Spawns", "persists": "#SLG_NailPistol_Persistency"}
+
+
+
+
+// ----- Backpack Filters -----
+
+//Nailgun + Mags
+addBPSpawnPoolFilter => { "name": "VirNailgun", "allowed": "#virnailgun_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "VirNailgunMag", "allowed": "#virnailgun_allowBackpacks" }
+
+//Nail Ammo + Bent Nails
+addBPSpawnPoolFilter => { "name": "VirNailammo", "allowed": "#virnails_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "VirBentNailammo", "allowed": "false" }
+
+//Nail Reloader
+addBPSpawnPoolFilter => { "name": "NailReloader", "allowed": "#virnailreloader_allowBackpacks" }
+
+//Queen + Mags
+addBPSpawnPoolFilter => { "name": "VirQueen", "allowed": "#virqueen_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "VirQueenMag", "allowed": "#virqueenmag_allowBackpacks" }
+
+//Dumbo
+addBPSpawnPoolFilter => { "name": "VirDumbo", "allowed": "#virdumbo_allowBackpacks" }
+
+//Burn Heal
+addBPSpawnPoolFilter => { "name": "VirBurnHeal", "allowed": "#virburnheal_allowBackpacks" }
+
+//Babuin Spray
+addBPSpawnPoolFilter => { "name": "VirBabuSpray", "allowed": "#babuspray_allowBackpacks" }
+
+//Sabre + Sheath
+addBPSpawnPoolFilter => { "name": "VirSabre", "allowed": "#virsabre_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "VirSabreSheath", "allowed": "#virsabresheath_allowBackpacks" }
+
+//Cleaver
+addBPSpawnPoolFilter => { "name": "HDCleaver", "allowed": "#vircleaver_allowBackpacks" }
+
+//Cleaver
+addBPSpawnPoolFilter => { "name": "HDPipeWrench", "allowed": "#virwrench_allowBackpacks" }
+
+//Shield Badge
+addBPSpawnPoolFilter => { "name": "VirShieldBadge", "allowed": "#virsbadge_allowBackpacks" }
+
+//Satya
+addBPSpawnPoolFilter => { "name": "VirSatya", "allowed": "#virsatya_allowBackpacks" }
+
+//Nailpistol & Mags
+addBPSpawnPoolFilter => { "name": "VirNailPistol", "allowed": "#virnailpistol_allowBackpacks" }
+addBPSpawnPoolFilter => { "name": "VirNailPistolMag", "allowed": "#virnailpismag_allowBackpacks" }
+
+
+
+
+
+// ----- Ammo Associations -----
+
+newAmmo => { "ammoName": "VirNailAmmo" }
+newAmmo => { "ammoName": "VirBentNailAmmo" }
+
+//Nailgun
+addAmmoUser => { "ammoName": "VirNailAmmo", "name": "VirNailgun" }
+addAmmoUser => { "ammoName": "HDBattery", "name": "VirNailgun" }
+
+//Nailpistol & mags
+addAmmoUser => { "ammoName": "VirNailAmmo", "name": "VirNailPistol" }
+addAmmoUser => { "ammoName": "HDMicroCell", "name": "VirNailPistol" }
+
+//Nail Reloader
+addAmmoUser => { "ammoName": "VirBentNailAmmo", "name": "NailReloader" }
+
+//Queen
+addAmmoUser => { "ammoName": "HD069BoreAmmo", "name": "VirQueen" }
+
+//Dumbo
+addAmmoUser => { "ammoName": "WAN_20mmGrenadeAmmo", "name": "VirDumbo" }
+
+//Satya
+addAmmoUser => { "ammoName": "HDMicroCell", "name": "VirSatya" }
+
+
+
+// ----- Ammobox Blacklist -----
+
+//Bent Nails
+addAmmoBoxBlacklist => { "ammoName": "VirBentNailAmmo" }
+
+//Sabre Sheath
+addAmmoBoxBlacklist => { "ammoName": "VirSabreSheath" }
+
+
+
+// ----- Enemy Pistol Drops -----
+
+//Satya
+addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "VirSatya", "weight": "#SLG_Satya_PistolDrops", "chance": "16", "persists": "true" }
+
+//Nailpistol
+addSpawnTableSingleEntry => { "tableName": "HDHandgunRandomDrop", "name": "VirNailPistol", "weight": "#SLG_NailPis_PistolDrops", "chance": "16", "persists": "true" }
+
+
+
+// ----- Merchant Stores -----
+
+//Satya
+newMerchantStoreItem => { "enabled": "#hdm_enable_satya", "type": "weapon", "category": "$MERCH_CAT_SATYA", "item": "VirSatya", "icon": "STYAP0", "displayName": "$MERCH_TAG_SATYA", "basePrice": "#hdm_satya_price", "flavorText": "$MERCH_FLAVOR_SATYA" }
+
+//Nailpistol + Mags
+newMerchantStoreItem => { "enabled": "#hdm_enable_nailpistol", "type": "weapon", "category": "$MERCH_CAT_NAILPIS", "item": "VirNailPistol", "icon": "VNPSX0", "displayName": "$MERCH_TAG_NAILPIS", "basePrice": "#hdm_nailpistol_price", "flavorText": "$MERCH_FLAVOR_NAILPIS" }
+newMerchantStoreItem => { "enabled": "#hdm_enable_nailpismag", "type": "mag", "category": "$MERCH_CAT_NLPMAG", "item": "VirNailPistolMag", "icon": "VNPSV0", "displayName": "$MERCH_TAG_NLPMAG", "basePrice": "#hdm_nailpismag_price", "flavorText": "$MERCH_FLAVOR_NLPMAG" }
+
+//Nailgun + Mags
+newMerchantStoreItem => { "enabled": "#hdm_enable_nailgun", "type": "weapon", "category": "$MERCH_CAT_NLG", "item": "VirNailgun", "icon": "VNLGX0", "displayName": "$MERCH_TAG_NLG", "basePrice": "#hdm_nailgun_price", "flavorText": "$MERCH_FLAVOR_NLG" }
+newMerchantStoreItem => { "enabled": "#hdm_enable_nailgunmag", "type": "mag", "category": "$MERCH_CAT_NLGMAG", "item": "VirNailgunMag", "icon": "VNLGV0", "displayName": "$MERCH_TAG_NLGMAG", "basePrice": "#hdm_nailgunmag_price", "flavorText": "$MERCH_FLAVOR_NLGMAG" }
+
+//Nail Ammo
+newMerchantStoreItem => { "enabled": "#hdm_enable_nails", "type": "ammo", "category": "$MERCH_CAT_NAILS", "item": "VirNailAmmo",  "amount": "70", "icon": "VNALX0", "displayName": "$MERCH_TAG_NAILS", "basePrice": "#hdm_nails_price", "flavorText": "$MERCH_FLAVOR_NAILS" }
+
+//Nail Reloader
+newMerchantStoreItem => { "enabled": "#hdm_enable_nailreloader", "type": "item", "category": "$MERCH_CAT_NAILFIX", "item": "NailReloader", "icon": "VNALV0", "displayName": "$MERCH_TAG_NAILFIX", "basePrice": "#hdm_nailreloader_price", "flavorText": "$MERCH_FLAVOR_NAILFIX" }
+
+//Queen + Mags
+newMerchantStoreItem => { "enabled": "#hdm_enable_queen", "type": "weapon", "category": "$MERCH_CAT_QUEEN", "item": "VirQueen", "icon": "QSCGQ0", "displayName": "$MERCH_TAG_QUEEN", "basePrice": "#hdm_queen_price", "flavorText": "$MERCH_FLAVOR_QUEEN" }
+newMerchantStoreItem => { "enabled": "#hdm_enable_queenmag", "type": "mag", "category": "$MERCH_CAT_QUEENMAG", "item": "VirQueenMag", "icon": "QENMA0", "displayName": "$MERCH_TAG_QUEENMAG", "basePrice": "#hdm_queenmag_price", "flavorText": "$MERCH_FLAVOR_QUEENMAG" }
+
+//Dumbo
+newMerchantStoreItem => { "enabled": "#hdm_enable_dumbo", "type": "weapon", "category": "$MERCH_CAT_DUMBO", "item": "VirDumbo", "icon": "DMBOX0", "displayName": "$MERCH_TAG_DUMBO", "basePrice": "#hdm_dumbo_price", "flavorText": "$MERCH_FLAVOR_DUMBO" }
+
+//Burn Heal
+newMerchantStoreItem => { "enabled": "#hdm_enable_burnheal", "type": "item", "category": "$MERCH_CAT_BURNHEAL", "item": "VirBurnHeal", "icon": "VBRNA0", "displayName": "$MERCH_TAG_BURNHEAL", "basePrice": "#hdm_burnheal_price", "flavorText": "$MERCH_FLAVOR_BURNHEAL" }
+
+//Babuin Spray
+newMerchantStoreItem => { "enabled": "#hdm_enable_babuspray", "type": "item", "category": "$MERCH_CAT_BABUSPRAY", "item": "VirBabuSpray", "icon": "BBUSA0", "displayName": "$MERCH_TAG_BABUSPRAY", "basePrice": "#hdm_babuspray_price", "flavorText": "$MERCH_FLAVOR_BABUSPRAY" }
+
+//Sabre + Sheath
+newMerchantStoreItem => { "enabled": "#hdm_enable_sabre", "type": "weapon", "category": "$MERCH_CAT_SABRE", "item": "VirSabre", "icon": "SBRPB0", "displayName": "$MERCH_TAG_SABRE", "basePrice": "#hdm_sabre_price", "flavorText": "$MERCH_FLAVOR_SABRE" }
+newMerchantStoreItem => { "enabled": "#hdm_enable_sabresheath", "type": "weapon", "category": "$MERCH_CAT_SABRESHEATH", "item": "VirSabreSheath", "icon": "SBRPC0", "displayName": "$MERCH_TAG_SABRESHEATH", "basePrice": "#hdm_sabresheath_price", "flavorText": "$MERCH_FLAVOR_SABRESHEATH" }
+
+//Cleaver
+newMerchantStoreItem => { "enabled": "#hdm_enable_cleaver", "type": "weapon", "category": "$MERCH_CAT_CLEAVER", "item": "HDCleaver", "icon": "CLVRX0", "displayName": "$MERCH_TAG_CLEAVER", "basePrice": "#hdm_cleaver_price", "flavorText": "$MERCH_FLAVOR_CLEAVER" }
+
+//Pipe Wrench
+newMerchantStoreItem => { "enabled": "#hdm_enable_wrench", "type": "weapon", "category": "$MERCH_CAT_PWRENCH", "item": "HDPipeWrench", "icon": "WRNPA0", "displayName": "$MERCH_TAG_PWRENCH", "basePrice": "#hdm_wrench_price", "flavorText": "$MERCH_FLAVOR_PWRENCH" }
+
+//Shield Badge
+newMerchantStoreItem => { "enabled": "#hdm_enable_sbadge", "type": "item", "category": "$MERCH_CAT_SBADGE", "item": "VirShieldBadge", "icon": "SHLBA0", "displayName": "$MERCH_TAG_SBADGE", "basePrice": "#hdm_sbadge_price", "flavorText": "$MERCH_FLAVOR_SBADGE" }
+
+//CO2 Grenade
+newMerchantStoreItem => { "enabled": "#hdm_enable_co2", "type": "ammo", "category": "$MERCH_CAT_CO2NADE", "item": "HDCO2GrenadeAmmo", "icon": "CO22A0", "displayName": "$MERCH_TAG_CO2NADE", "basePrice": "#hdm_co2_price", "flavorText": "$MERCH_FLAVOR_CO2NADE" }
+
+

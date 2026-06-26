@@ -1,0 +1,7 @@
+
+This pack targets HDest's latest release. Any changes or fixes that break functionality
+with the latest release should be avoided and kept in a fork or branch until
+HDest gets a new release that's compatible.
+
+If any menus, CoreLib commands or CVars are added, please try to keep them uniform
+with the rest whenever possible, or else my OCD is getting the best of me.

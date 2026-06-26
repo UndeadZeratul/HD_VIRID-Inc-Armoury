@@ -1,0 +1,225 @@
+//Nailgun
+brightmap sprite VNLGA0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGB0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGC0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGD0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGE0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGF0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGG0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGH0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGI0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNLGX0
+{
+   map brightmaps/Nailgun/NGBRIGHT.png
+}
+
+brightmap sprite VNLGY0
+{
+   map brightmaps/Nailgun/NGBRIGHT.png
+}
+
+brightmap sprite VNL2A0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2B0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2C0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2D0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2E0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2F0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2G0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2H0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+brightmap sprite VNL2I0
+{
+   map brightmaps/Nailgun/NailBodyB.png
+}
+
+
+//Shield Badge
+brightmap sprite SHLBB0
+{
+   map brightmaps/ShieldBadge/BadgeBright1.png
+}
+
+brightmap sprite SHLBC0
+{
+   map brightmaps/ShieldBadge/BadgeBright2.png
+}
+
+brightmap sprite SHLBD0
+{
+   map brightmaps/ShieldBadge/BadgeBright3.png
+}
+
+brightmap sprite SHLBE0
+{
+   map brightmaps/ShieldBadge/BadgeBright4.png
+}
+
+brightmap sprite SHLBF0
+{
+   map brightmaps/ShieldBadge/BadgeBright5.png
+}
+
+brightmap sprite SHLBG0
+{
+   map brightmaps/ShieldBadge/BadgeBright6.png
+}
+
+
+//Satya
+brightmap sprite STYAA0
+{
+   map brightmaps/Satya/SatyaBright4.png
+}
+
+brightmap sprite STYAB0
+{
+   map brightmaps/Satya/SatyaBright5.png
+}
+
+brightmap sprite STYAC0
+{
+   map brightmaps/Satya/SatyaBright6.png
+}
+
+brightmap sprite STY2A0
+{
+   map brightmaps/Satya/SatyaBright1.png
+}
+
+brightmap sprite STY2B0
+{
+   map brightmaps/Satya/SatyaBright2.png
+}
+
+brightmap sprite STY2C0
+{
+   map brightmaps/Satya/SatyaBright3.png
+}
+
+brightmap sprite STYAP0
+{
+   map brightmaps/Satya/SatyaBright7.png
+}
+
+//Nail Pistol
+brightmap sprite VNPSA0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSB0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSC0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSD0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSE0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSF0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSG0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSH0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT1.png
+}
+
+brightmap sprite VNPSI0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT2.png
+}
+
+brightmap sprite VNPSX0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT3.png
+}
+
+brightmap sprite VNPSY0
+{
+   map brightmaps/NailPistol/NLP_BRIGHT3.png
+}

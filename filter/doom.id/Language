@@ -1,0 +1,6 @@
+[enu default]
+
+//Merchant Store
+MERCH_CAT_BURNHEAL				= "VIRID Inc.";
+MERCH_TAG_BURNHEAL				= "Burn Heal";
+MERCH_FLAVOR_BURNHEAL			= "Who would've thought that Imps can learn Will-o-wisp!";

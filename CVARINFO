@@ -1,0 +1,128 @@
+//Nailgun
+server float SLG_Nailgun_Spawns					= 1.9;
+server bool hdm_enable_nailgun					= true;
+server bool virnailgun_allowBackpacks			= true;
+server bool SLG_Nailgun_Persistency 			= true;
+server int hdm_nailgun_price 					= 315;
+
+//Nailgun Mag
+server float SLG_NailgunMag_Spawns				= 2;
+server bool hdm_enable_nailgunmag				= true;
+server bool virnailgunmag_allowBackpacks		= true;
+server bool SLG_NailgunMag_Persistency 			= true;
+server int hdm_nailgunmag_price 				= 30;
+
+//Nails
+server float SLG_NailsCell_Spawns				= 1.3;
+server float SLG_NailsShell_Spawns				= 1.75;
+server bool hdm_enable_nails					= true;
+server bool virnails_allowBackpacks				= true;
+server bool SLG_Nails_Persistency 				= true;
+server int hdm_nails_price 						= 55;
+
+//Nail reloader
+server bool hdm_enable_nailreloader				= true;
+server bool virnailreloader_allowBackpacks		= true;
+server int hdm_nailreloader_price 				= 250;
+
+//Queen Scattergun
+server float SLG_Queen_Spawns					= 2.1;
+server bool hdm_enable_queen					= true;
+server bool virqueen_allowBackpacks				= true;
+server bool SLG_Queen_Persistency 				= true;
+server int hdm_queen_price 						= 195;
+
+//Queen Mag
+server float SLG_QueenMag_Spawns				= 2.3;
+server bool hdm_enable_queenmag					= true;
+server bool virqueenmag_allowBackpacks			= true;
+server bool SLG_QueenMag_Persistency 			= true;
+server int hdm_queenmag_price 					= 13;
+
+//Dumbo
+server float SLG_Dumbo_Spawns					= 1.25;
+server bool hdm_enable_dumbo					= true;
+server bool virdumbo_allowBackpacks				= true;
+server bool SLG_Dumbo_Persistency 				= true;
+server int hdm_dumbo_price 						= 215;
+
+//Burn Heal
+server bool hdm_enable_burnheal					= true;
+server bool virburnheal_allowBackpacks			= true;
+server bool SLG_BurnHeal_Persistency 			= true;
+server float SLG_BurnHeal_Spawns				= 0.75;
+server int hdm_burnheal_price 					= 20;
+
+//Babuin Spray
+server float SLG_BabusprayArmour_Spawns 		= 0.3;
+server float SLG_BabusprayHealth_Spawns 		= 0.3;
+server bool babuspray_allowBackpacks 			= true;
+server bool SLG_Babuspray_Persistency 			= true;
+server bool hdm_enable_babuspray 				= true;
+server int hdm_babuspray_price 					= 75;
+
+//Sabre
+server float SLG_Sabre_Spawns 					= 1;
+server bool SLG_Sabre_Persistency 				= true;
+server bool virsabre_allowBackpacks				= true;
+server bool hdm_enable_sabre					= true;
+server int hdm_sabre_price						= 430;
+
+//Sabre Sheath
+server bool virsabresheath_allowBackpacks		= true;
+server bool hdm_enable_sabresheath				= true;
+server int hdm_sabresheath_price				= 50;
+
+//Cleaver
+server float SLG_Cleaver_Spawns 				= 1;
+server bool SLG_Cleaver_Persistency 			= true;
+server bool vircleaver_allowBackpacks			= true;
+server bool hdm_enable_cleaver					= true;
+server int hdm_cleaver_price					= 110;
+
+//Pipe Wrench
+server float SLG_Wrench_Spawns 					= 1;
+server bool SLG_Wrench_Persistency 				= true;
+server bool virwrench_allowBackpacks			= true;
+server bool hdm_enable_wrench					= true;
+server int hdm_wrench_price						= 150;
+
+//Shield Badge
+server float SLG_SBadge_Spawns 					= 1.2;
+server bool SLG_SBadge_Persistency 				= true;
+server bool virsbadge_allowBackpacks			= true;
+server bool hdm_enable_sbadge					= true;
+server int hdm_sbadge_price						= 256;
+
+//Satya
+server float SLG_Satya_Spawns 					= 1.9;
+server float SLG_Satya_PistolDrops 				= 0.9;
+server bool SLG_Satya_Persistency 				= true;
+server bool virsatya_allowBackpacks				= true;
+server bool hdm_enable_satya					= true;
+server int hdm_satya_price						= 180;
+
+//CO2 Grenades
+server float SLG_CO2RocketBox_Spawns 			= 1.95;
+server float SLG_CO2BlurSphere_Spawns 			= 4.25;
+server float SLG_CO2HealthBonus_Spawns 			= 2;
+server float SLG_CO2ArmourBonus_Spawns 			= 2;
+server bool SLG_CO2_Persistency 				= true;
+server bool virco2_allowBackpacks				= true;
+server bool hdm_enable_co2						= true;
+server int hdm_co2_price						= 35;
+
+//Nail Pistol
+server float SLG_NailPistol_Spawns				= 1.8;
+server float SLG_NailPistol_PistolDrops			= 0.5;
+server bool hdm_enable_nailpistol				= true;
+server bool virnailpistol_allowBackpacks		= true;
+server bool SLG_NailPistol_Persistency 			= true;
+server int hdm_nailPistol_price 				= 210;
+
+//Nail Pistol Mag
+server float SLG_NailPisMag_Spawns				= 1.7;
+server bool hdm_enable_nailpismag				= true;
+server bool virnailpismag_allowBackpacks		= true;
+server bool SLG_NailPisMag_Persistency 			= true;
+server int hdm_nailpismag_price 				= 19;

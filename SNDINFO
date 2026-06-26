@@ -1,0 +1,75 @@
+//Nailgun
+Weapons/Nailgun/fire		NGSHOOT
+Weapons/nailgun/lowbat		NGLOWBAT
+Weapons/nailgun/charge		NGCHARGE
+Weapons/nailgun/nope		NGNOPE
+weapons/nailgun/load		NGLOAD
+weapons/nailgun/unload		NGULOD
+
+//Queen
+weapons/queenshot		QSGSHOT
+weapons/queencock		QSGCOCK
+weapons/queenuncock		QSGUCOK
+weapons/queenload		QSGLOAD
+weapons/queenunload		QSGULOD
+weapons/queenchamber	QSGCHAM
+
+//Dumbo
+weapons/dumbo			DMBOSHOT
+
+//Burn heal
+burnheal/spray			BRNHSPRY
+
+//Babuin Spray
+BabuSpray/Tsss   		BabuTsss
+
+//Sabre
+Sabre/Pull 				SABRPULL
+Sabre/Sheath			SABSHTH
+Sabre/Click				SABRCLIK
+$random Sabre/swing {Sabre/SW1 Sabre/SW2 Sabre/SW3}
+Sabre/SW1 				SABSWNG1
+Sabre/SW2 				SABSWNG2
+Sabre/SW3 				SABSWNG3
+$random Sabre/wall {Sabre/WL1 Sabre/WL2}
+Sabre/WL1 				SABWALL1
+Sabre/WL2 				SABWALL2
+$random Sabre/flesh {Sabre/Hit1 Sabre/Hit2}
+Sabre/Hit1 				SABFLSH1
+Sabre/Hit2 				SABFLSH2
+
+//Cleaver
+$random Cleaver/swing {Cleaver/SW1 Cleaver/SW2 Cleaver/SW3}
+$alias Cleaver/SW1 Sabre/SW1
+$alias Cleaver/SW2 Sabre/SW2
+$alias Cleaver/SW3 Sabre/SW3
+$random Cleaver/wall {Cleaver/WL1 Cleaver/WL2}
+$alias Cleaver/WL1 Sabre/WL1
+$alias Cleaver/WL2 Sabre/WL2
+$random Cleaver/flesh {Cleaver/Hit1 Cleaver/Hit2}
+$alias Cleaver/Hit1 Sabre/Hit1
+$alias Cleaver/Hit2 Sabre/Hit2
+
+//Wrench
+Wrench/Flesh				PWRNHIT
+Wrench/Wall					PWRNWAL
+$random Wrench/swing {Wrench/SW1 Wrench/SW2 Wrench/SW3}
+Wrench/SW1 					PWRNSW1
+Wrench/SW2 					PWRNSW1
+Wrench/SW3 					PWRNSW1
+
+//CO2 Grenade
+weapons/grenade/co2/start 	CO2START
+weapons/grenade/co2/hiss 	CO2HISS
+weapons/grenade/co2/end 	CO2END
+
+//Satya
+Satya/Shoot			SATSHOT
+Satya/Charge		SATCHARG
+Satya/Nope			SATNOPE
+Satya/Down			SATDOWN
+
+//NailPistol
+Weapons/NPistol/fire		NLPSHOT
+Weapons/NPistol/nopressure	NLPPRESS
+Weapons/NPistol/firebig		NLPSHOT2
