@@ -1,4 +1,3 @@
-
 Additional Content to be finished (In order of importance):
 	- Battery Dynamo				-	Not much work left, just a sprite and some sounds
 	- Updated MP40					-	Needs polish

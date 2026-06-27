@@ -22,7 +22,7 @@ class VirBabuSpray:HDWeaponGrabber{
 		inventory.pickupmessage "$BABUSPRAY_PICKUP";
 		obituary "$BABUSPRAY_OB";
 		hdweapon.barrelsize 26,1,2;
-		hdweapon.refid HDLD_BABUSPRAY;
+		hdweapon.refid "abs";
 		tag "$BABUSPRAY_TAG";
 		+inventory.invbar
 		inventory.icon "BBUSA0";

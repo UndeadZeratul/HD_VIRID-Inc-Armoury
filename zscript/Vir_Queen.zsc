@@ -26,7 +26,7 @@ class VirQueen:HDWeapon{
         obituary "$QUEEN_OB";
         inventory.pickupmessage "$QUEEN_PICKUP";
         tag "$QUEEN_TAG";
-        hdweapon.refid HDLD_QUEEN;
+        hdweapon.refid "qsg";
         hdweapon.barrelsize 24,0.4,2;
 
         hdweapon.ammo1 "VirQueenMag",1;
@@ -509,7 +509,7 @@ class VirQueenMag:HDMagAmmo{
 		hdmagammo.magbulk ENC_QUEENMAG_EMPTY;
 		tag "$QUEENMAG_TAG";
 		inventory.pickupmessage "$QUEENMAG_PICKUP";
-		hdpickup.refid HDLD_QUEENMAG;
+		hdpickup.refid "qnm";
 		scale 0.5;
 	}
 	override string,string,name,double getmagsprite(int thismagamt){

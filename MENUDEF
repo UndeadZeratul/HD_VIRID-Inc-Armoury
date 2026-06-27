@@ -1,3 +1,141 @@
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "VIRID Inc. Armoury Options", "ViridInc_Menu"
+}
+
+AddOptionMenu "HDAddonMenu"
+{
+	Submenu "VIRID Inc. Armoury Options", "ViridInc_Menu"
+}
+
+OptionValue "SpawnEnable"
+{
+    0,    "Nope"
+    1,    "Yepp"
+}
+
+OptionMenu "ViridInc_Menu"
+{
+	Title "VIRID Inc. Armoury Options"
+	
+	StaticText "--- Weapon & Mag Options ---", "DarkGreen"
+	StaticText ""
+	Submenu "VIRID Inc. Electro Magnetic Nailgun", "VIR_Nailgun_Menu", 0, 1
+	StaticText ""
+	Submenu "VIRID Inc. Nail Pistol", "VIR_NailPistol_Menu", 0, 1
+	StaticText ""
+	Submenu "'Satya' 8mm Light Cannon", "VIR_Satya_Menu", 0, 1
+	StaticText ""
+	Submenu "'Queen' .066 Bore Scattergun", "VIR_Queen_Menu", 0, 1
+	StaticText "" 
+	Submenu "'Dumbo' 20mm Grenade Launcher", "VIR_Dumbo_Menu", 0, 1
+	StaticText "" 
+	Submenu "Cavalry Sabre", "VIR_Sabre_Menu", 0, 1
+	StaticText "" 
+	Submenu "Cleaver", "VIR_Cleaver_Menu", 0, 1
+	StaticText "" 
+	Submenu "Pipe Wrench", "VIR_Wrench_Menu", 0, 1
+	StaticText "" 
+	StaticText "" 
+	StaticText "" 
+	
+	StaticText "--- Equipment Options ---", "DarkGreen"
+	StaticText ""
+	Submenu "Shield Badge", "VIR_SBadge_Menu", 0, 1
+	StaticText ""
+	Submenu "Burn Heal", "VIR_Burnheal_Menu", 0, 1
+	StaticText ""
+	Submenu "'Babu-Begone' Anti-Babuin Spray", "VIR_BabuSpray_Menu", 0, 1
+	StaticText ""
+	Submenu "Nail Repair Device", "VIR_NailReloader_Menu", 0, 1
+	StaticText ""
+	StaticText ""
+	StaticText "" 
+	
+	StaticText "--- Ammo Options ---", "DarkGreen"
+	StaticText ""
+	Submenu "Steel Nails", "VIR_Nails_Menu", 0, 1
+	StaticText ""
+	Submenu "CO2 Grenades", "VIR_CO2_Menu", 0, 1
+	StaticText ""
+	StaticText ""
+	StaticText ""
+}
+
+OptionMenu "VIR_Nails_Menu"
+{
+	Title "Steel Nails"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (CellPack Pool)", "SLG_NailsCell_Spawns", 0.0, 50, .01, 2
+	Slider "Spawn Weight (ShellBox Pool)", "SLG_NailsShell_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can Spawn in wild Backpacks?", "virnails_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Persistent Spawns?", "SLG_Nails_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_Nails", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_nails_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_NailsCell_Spawns [VALUE]", "Green"
+	StaticText "SLG_NailsShell_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_Nails_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_CO2_Menu"
+{
+	Title "CO2 Grenades"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Grenade bundle spawn Weight (Rocket box Pool)", "SLG_CO2RocketBox_Spawns", 0.0, 50, .01, 2
+	Slider "Grenade bundle spawn Weight (Blur Sphere Pool)", "SLG_CO2BlurSphere_Spawns", 0.0, 50, .01, 2
+	Slider "Single Grenade spawn Weight (Health Bonus Pool)", "SLG_CO2HealthBonus_Spawns", 0.0, 50, .01, 2
+	Slider "Single Grenade spawn Weight (Armour Bonus Pool)", "SLG_CO2ArmourBonus_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can Spawn in wild Backpacks?", "virco2_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Persistent Spawns?", "SLG_CO2_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_co2", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_co2_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Grenade Bundle Spawn Weight:", "White"
+	StaticText "SLG_CO2RocketBox_Spawns [VALUE]", "Green"
+	StaticText "SLG_CO2BlurSphere_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Single Grenade Spawn Weight:", "White"
+	StaticText "SLG_CO2HealthBonus_Spawns [VALUE]", "Green"
+	StaticText "SLG_CO2ArmourBonus_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_co2_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
 OptionMenu "VIR_Nailgun_Menu"
 {
 	Title "VIRID Inc. Electro Magnetic Nailgun"
@@ -303,6 +441,131 @@ OptionMenu "VIR_Satya_Menu"
 	StaticText ""
 	StaticText "Merchant Price:", "White"
 	StaticText "hdm_satya_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_NailReloader_Menu"
+{
+	Title "Nail Repair Device"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Option "Can Spawn in wild Backpacks?", "virnailreloader_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_nailreloader", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_nailreloader_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_nailreloader_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_BurnHeal_Menu"
+{
+	Title "Burn Heal"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (Stimpack pool)", "SLG_BurnHeal_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can Spawn in wild Backpacks?", "virburnheal_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Persistent Spawns?", "SLG_BurnHeal_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_burnheal", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_burnheal_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_BurnHeal_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_burnheal_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_BabuSpray_Menu"
+{
+	Title "'Babu-Begone' Anti-Babuin Spray"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (Armour bonus pool)", "SLG_BabuSprayArmour_Spawns", 0.0, 50, .01, 2
+	Slider "Spawn Weight (Health bonus pool)", "SLG_BabuSprayHealth_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can Spawn in wild Backpacks?", "babuspray_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Persistent Spawns?", "SLG_BabuSpray_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_babuspray", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_babuspray_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_BabuSprayArmour_Spawns [VALUE]", "Green"
+	StaticText "SLG_BabuSprayHealth_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_babuspray_price [VALUE]", "Green"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	
+}
+
+OptionMenu "VIR_SBadge_Menu"
+{
+	Title "Shield Badge"
+	
+	StaticText "--- Spawning ---", "DarkGreen"
+	StaticText ""
+	Slider "Spawn Weight (Armour bonus pool)", "SLG_SBadge_Spawns", 0.0, 50, .01, 2
+	StaticText ""
+	Option "Can Spawn in wild Backpacks?", "virsbadge_allowBackpacks", "SpawnEnable"
+	StaticText ""
+	Option "Persistent Spawns?", "SLG_SBadge_Persistency", "SpawnEnable"
+	StaticText ""
+	StaticText ""
+	StaticText "--- Merchant Store ---", "DarkGreen"
+	StaticText ""
+	Option "Can be sold by Merchants?", "hdm_enable_sbadge", "SpawnEnable"
+	StaticText ""
+	Slider "Price", "hdm_sbadge_price", 0.0, 5000, .01, 2
+	StaticText ""
+	StaticText ""
+	StaticText "Use the following commands for faster fine tuning of values!", "Gold"
+	StaticText ""
+	StaticText "Spawn Weight:", "White"
+	StaticText "SLG_SBadge_Spawns [VALUE]", "Green"
+	StaticText ""
+	StaticText "Merchant Price:", "White"
+	StaticText "hdm_sbadge_price [VALUE]", "Green"
 	StaticText ""
 	StaticText ""
 	StaticText ""

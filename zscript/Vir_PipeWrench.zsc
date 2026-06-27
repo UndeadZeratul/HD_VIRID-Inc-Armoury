@@ -79,7 +79,7 @@ class HDPipeWrench:HDCoreBaseMeleeWeapon{
 		//+FLATSPRITE
 		DamageFunction (random(30,40));
 		tag "$TAG_PIPEWRENCH";
-		hdweapon.refid HDLD_WRENCH;
+		hdweapon.refid "pwr";
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse);}

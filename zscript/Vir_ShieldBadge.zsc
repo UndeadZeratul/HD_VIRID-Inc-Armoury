@@ -3,7 +3,7 @@ class VirShieldBadge:ShieldCore{
 		tag "$TAG_SBADGE";
 		inventory.icon "SHLBA0";
 		hdmagammo.maxperunit 256;
-		HDPickup.RefID HDLD_SBADGE;
+		HDPickup.RefID "vsb";
 
 		inventory.pickupmessage "$PICKUP_SBADGE";
 		inventory.pickupsound "weapons/pocket";

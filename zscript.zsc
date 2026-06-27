@@ -1,27 +1,5 @@
 version "4.14"
 
-//Loadout Codes
-const HDLD_DUMBO		= "dmb";
-const HDLD_NAILGUN		= "vng";
-const HDLD_NAILPISTOL	= "vnp";
-const HDLD_QUEEN		= "qsg";
-const HDLD_SABRE		= "csb";
-const HDLD_CLEAVER		= "clv";
-const HDLD_WRENCH		= "pwr";
-const HDLD_SATYA		= "sty";
-
-const HDLD_BURNHEAL		= "vbh";
-const HDLD_NAILRL		= "vnr";
-const HDLD_SBADGE		= "vsb";
-const HDLD_BABUSPRAY	= "abs";
-
-const HDLD_NAILDRUM		= "vnm";
-const HDLD_QUEENMAG		= "qnm";
-
-const HDLD_NAIL			= "vnl";
-const HDLD_CO2NADE		= "co2";
-
-
 // Ammo
 #include "zscript/Vir_Nails.zsc"
 #include "zscript/Vir_CO2Nade.zsc"

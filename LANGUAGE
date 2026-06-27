@@ -1,0 +1,185 @@
+[en enc eng eni ena enz default]
+
+//Nailgun + mags
+TAG_NAILGUN = "Virid Inc. Electro Magnetic Nailgun";
+PICKUP_NAILGUN = "You got the Nailgun! Make them your new wall art!";
+OB_NAILGUN = "%o got nailed by %k.";
+
+TAG_NAILMAG = "Nailgun Drum Magazine";
+PICKUP_NAILMAG = "Picked up a Nailgun drum magazine.";
+
+//Nails
+TAG_BENTNAIL = "Bent Steel Nail";
+PICKUP_BENTNAIL = "Picked up a steel nail, it's bent...";
+TAG_NAIL = "Steel Nail";
+PICKUP_NAIL = "Picked up a steel nail.";
+PICKUP_NAILBUNCH = "Picked up some steel nails.";
+TAG_NAILBOX = "Box of steel nails";
+PICKUP_NAILBOX = "Picked up a box of steel nails.";
+
+//Queen Scattergun
+QUEEN_OB = "%o couldn't handle queen %k.";
+QUEEN_TAG = "'Queen' .066 Bore Scatter Gun";
+QUEEN_PICKUP = "You got the .066 Bore Scatter Gun!";
+QUEENMAG_TAG = ".066 Bore Tube Magazine";
+QUEENMAG_PICKUP = "Picked up a .066 Bore Tube Magazine.";
+
+QUEEN_FIRE = "  Shoot";
+QUEEN_ALTFIRE = "  Chamber / Clear Jam\n";
+QUEEN_RELOAD = "  Load Magazine\n";
+QUEEN_UPRELOAD = "  Load Chamber\n"; 
+QUEEN_AFIREPUNL = "  Unload Chamber\n";
+
+//Dumbo
+OB_DUMBO = "%o got trampled by %k.";
+TAG_DUMBO = "'Dumbo' 20mm Grenade Launcher";
+PICKUP_DUMBO = "You got the 'Dumbo' 20mm Grenade Launcher!";
+
+//Burn heal
+PICKUP_BURNHEAL_EMPTY = "Picked up an empty bottle of burn heal.";
+PICKUP_BURNHEAL_FULL = "Picked up a bottle of burn heal.";
+PICKUP_BURNHEAL_USED = "Picked up a used bottle of burn heal.";
+TAG_BURNHEAL = "Burn Heal";
+
+//Babuin Spray
+BABUSPRAY_TAG = "'Babu-Begone' Anti-Babuin Spray";
+BABUSPRAY_OB = "%k discovered that %o is a babuin in disguise.";
+BABUSPRAY_PICKUP = "Picked up a can of 'Babu-Begone' anti-babuin spray.";
+
+//Sabre
+TAG_SABRE = "Cavalry Sabre";
+PICKUP_SABRE = "You got the Sabre! Cavalry, Chaaaaarge!";
+OB_SABRE = "%o got charged by %k.";
+
+TAG_SABRESHEATH = "Sabre Sheath";
+PICKUP_SABRESHEATH = "Picked up a sheath...without the sabre.";
+
+// Cleaver
+TAG_CLEAVER = "Cleaver";
+PICKUP_CLEAVER = "You got the cleaver! Chop-chop!";
+OB_CLEAVER = "%o got chopped up by %k.";
+
+//Pipe Wrench
+TAG_PIPEWRENCH = "Pipe Wrench";
+PICKUP_PIPEWRENCH = "You got the Pipe Wrench! Let them see stars!";
+OB_PIPEWRENCH = "%k fixed %o's plumbing.";
+
+//Shield Badge
+TAG_SBADGE = "Shield Badge";
+PICKUP_SBADGE = "Picked up a shield badge.";
+
+//CO2 Grenade
+CO2NADE_TAG = "CO2-Grenade";
+CO2NADE_HELPTEXT_1 = "  Wind up, release to throw\n(\cxSTOP READING AND DO THIS";
+CO2NADE_HELPTEXT_2 = "  Pull pin/wind up (release to throw)\n";
+CO2NADE_HELPTEXT_3 = "  Pull pin, again to drop spoon\n";
+CO2NADE_HELPTEXT_4 = "  Abort/replace pin\n";
+CO2NADE_HELPTEXT_5 = "  Start planting tripwire traps";
+OB_CO2NADE = "%o was somehow smoked out by %k. Good job.";
+OB_CO2NADE2 = "%o was fire.";
+PICKUP_CO2NADE = "Picked up a CO2-Grenade.";
+
+//Satya
+TAG_SATYA = "'Satya' 8mm Light Cannon";
+PICKUP_SATYA = "You got the 'Satya' Light Cannon!";
+OB_SATYA = "%o has seen the light, thanks to %k.";
+
+//Nailpistol + Mags
+TAG_NAILPISTOL = "Virid Inc. Nail Pistol";
+PICKUP_NAILPISTOL = "You got the Nail Pistol! My, this thing is heavy!";
+OB_NAILPISTOL = "%o got nailed by %k.";
+
+TAG_NAILPISMAG = "Nail Pistol Magazine";
+PICKUP_NAILPISMAG = "Picked up a Nail Pistol magazine.";
+
+// Merchant
+
+//Nailgun
+MERCH_CAT_NLG					= "VIRID Inc.";
+MERCH_TAG_NLG					= "VIRID Inc. Electro Magnetic Nailgun";
+MERCH_FLAVOR_NLG				= "Don't use it to build a house. Worst mistake of my life.";
+
+//Nailgun Mags
+MERCH_CAT_NLGMAG				= "VIRID Inc.";
+MERCH_TAG_NLGMAG				= "Nailgun Drum Magazine";
+MERCH_FLAVOR_NLGMAG				= "";
+
+//Nail Reloaders
+MERCH_CAT_NAILFIX				= "VIRID Inc.";
+MERCH_TAG_NAILFIX				= "Nail Repair Device";
+MERCH_FLAVOR_NAILFIX			= "Straightens your bent steel nails, so you don't have to support the ammo merchant! Screw that one!";
+
+//Nails
+MERCH_CAT_NAILS					= "VIRID Inc.";
+MERCH_TAG_NAILS					= "Steel Nails";
+MERCH_FLAVOR_NAILS				= "Perfect for turning monsters into modern art.";
+
+//Queen Scattergun
+MERCH_CAT_QUEEN					= "VIRID Inc.";
+MERCH_TAG_QUEEN					= "'Queen' .066 Bore Scattergun";
+MERCH_FLAVOR_QUEEN				= "If they don't kneel, make them!";
+
+//Queen Scattergun Mag
+MERCH_CAT_QUEENMAG				= "VIRID Inc.";
+MERCH_TAG_QUEENMAG				= ".066 Bore Scattergun Magazine";
+MERCH_FLAVOR_QUEENMAG			= "";
+
+//Dumbo
+MERCH_CAT_DUMBO					= "VIRID Inc.";
+MERCH_TAG_DUMBO					= "'Dumbo' 20mm Grenade Launcher";
+MERCH_FLAVOR_DUMBO				= "It was almost called 'Benjamin' instead.";
+
+//Burn Heal
+MERCH_CAT_BURNHEAL				= "VIRID Inc.";
+MERCH_TAG_BURNHEAL				= "Burn Heal";
+MERCH_FLAVOR_BURNHEAL			= "Who would've thought that Serpentipedes can learn Will-o-wisp!";
+
+//Babuin Spray
+MERCH_CAT_BABUSPRAY 			= "VIRID Inc.";
+MERCH_TAG_BABUSPRAY 			= "'Babu-Begone' Anti-Babuin Spray";
+MERCH_FLAVOR_BABUSPRAY 			= "Dump the whole can into a Babuin to make it violently explode. It's a feature.";
+
+//Sabre
+MERCH_CAT_SABRE					= "VIRID Inc.";
+MERCH_TAG_SABRE					= "Cavalry Sabre";
+MERCH_FLAVOR_SABRE				= "Sheath not included. trust me, you might want one.";
+
+//Sabre sheath
+MERCH_CAT_SABRESHEATH			= "VIRID Inc.";
+MERCH_TAG_SABRESHEATH			= "Cavalry Sabre Sheath";
+MERCH_FLAVOR_SABRESHEATH		= "Um..you do have the sword already, right?";
+
+//Cleaver
+MERCH_CAT_CLEAVER				= "VIRID Inc.";
+MERCH_TAG_CLEAVER				= "Cleaver";
+MERCH_FLAVOR_CLEAVER			= "Ah, fresh meat!";
+
+//Pipe Wrench
+MERCH_CAT_PWRENCH				= "VIRID Inc.";
+MERCH_TAG_PWRENCH				= "Pipe Wrench";
+MERCH_FLAVOR_PWRENCH			= "Bap!";
+
+//Shield Badge
+MERCH_CAT_SBADGE				= "VIRID Inc.";
+MERCH_TAG_SBADGE				= "Shield Badge";
+MERCH_FLAVOR_SBADGE				= "Blink at the wrong time and it's gone.";
+
+//CO2 Grenade
+MERCH_CAT_CO2NADE				= "VIRID Inc.";
+MERCH_TAG_CO2NADE 				= "CO2-Grenade";
+MERCH_FLAVOR_CO2NADE 			= "For when the BBQ got a bit out of hand.";
+
+//Satya
+MERCH_CAT_SATYA                 = "VIRID Inc.";
+MERCH_TAG_SATYA                 = "'Satya' 8mm Light Cannon";
+MERCH_FLAVOR_SATYA              = "Conventional ammo is so last year. So how about hardened, concentrated light?";
+
+//Nail pistol
+MERCH_CAT_NAILPIS				= "VIRID Inc.";
+MERCH_TAG_NAILPIS				= "VIRID Inc. Nail Pistol";
+MERCH_FLAVOR_NAILPIS			= "This one's using air to shoot nails. Y'know, like a normal nail gun.";
+
+//Nail pistol Mags
+MERCH_CAT_NLPMAG				= "VIRID Inc.";
+MERCH_TAG_NLPMAG				= "Nail Pistol Magazine";
+MERCH_FLAVOR_NLPMAG				= "";

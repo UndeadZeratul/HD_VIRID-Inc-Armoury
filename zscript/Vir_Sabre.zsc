@@ -64,7 +64,7 @@ class VirSabre:HDCoreBaseMeleeWeapon{
 		DamageFunction (random(40,45));
 		scale 0.7;
 		tag "$TAG_SABRE";
-		hdweapon.refid HDLD_SABRE;
+		hdweapon.refid "csb";
 		//hdweapon.barrelsize 21,3,1;
 		HDWeapon.loadoutcodes "
 		\cusheathed - 0/1, the sword comes with a sheath.

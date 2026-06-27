@@ -29,7 +29,7 @@ class VirNailgun:HDWeapon{
 		scale 0.55;
 		inventory.pickupmessage "$PICKUP_NAILGUN";
 		hdweapon.barrelsize 26.5,1.5,2;
-		hdweapon.refid HDLD_NAILGUN;
+		hdweapon.refid "vng";
 		tag "$TAG_NAILGUN";
 		inventory.icon "VNLGX0";
 
@@ -484,7 +484,7 @@ class VirNailgunMag:HDMagAmmo{
 		hdmagammo.magbulk ENC_NAILGUNMAG_EMPTY;
 		tag "$TAG_NAILMAG";
 		inventory.pickupmessage "$PICKUP_NAILMAG";
-		hdpickup.refid HDLD_NAILDRUM;
+		hdpickup.refid "vnm";
 		scale 0.45;
 	}
 	override string,string,name,double getmagsprite(int thismagamt){

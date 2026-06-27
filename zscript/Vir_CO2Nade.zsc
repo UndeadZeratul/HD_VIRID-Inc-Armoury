@@ -183,7 +183,7 @@ class HDCO2GrenadeAmmo:HDAmmo{
 		inventory.pickupmessage "$PICKUP_CO2NADE";
 		inventory.pickupsound "weapons/pocket";
 		tag "$CO2NADE_TAG";
-		hdpickup.refid HDLD_CO2NADE;
+		hdpickup.refid "co2";
 		hdpickup.bulk ENC_CO2GRENADE;
 		+INVENTORY.KEEPDEPLETED
 	}

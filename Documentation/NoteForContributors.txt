@@ -1,4 +1,3 @@
-
 This pack targets HDest's latest release. Any changes or fixes that break functionality
 with the latest release should be avoided and kept in a fork or branch until
 HDest gets a new release that's compatible.

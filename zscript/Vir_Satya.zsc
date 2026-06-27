@@ -14,7 +14,7 @@ class VirSatya:HDHandgun{
 		obituary "$OB_SATYA";
 		inventory.pickupmessage "$PICKUP_SATYA";
 		tag "$TAG_SATYA";
-		hdweapon.refid HDLD_SATYA;
+		hdweapon.refid "sty";
 		hdweapon.barrelsize 17,0.3,0.5;
 	}
 	override void postbeginplay(){

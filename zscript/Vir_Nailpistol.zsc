@@ -32,7 +32,7 @@ class VirNailPistol:HDWeapon{
 		scale 0.45;
 		inventory.pickupmessage "$PICKUP_NAILPISTOL";
 		hdweapon.barrelsize 19,1,2;
-		hdweapon.refid HDLD_NAILPISTOL;
+		hdweapon.refid "vnp";
 		tag "$TAG_NAILPISTOL";
 		inventory.icon "VNPSX0";
 

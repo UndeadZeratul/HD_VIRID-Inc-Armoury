@@ -70,7 +70,7 @@ class VirNailAmmo : HDRoundAmmo
 		Inventory.icon "VNA2B0";
 		Inventory.PickupMessage "$PICKUP_NAIL";
 		hdpickup.bulk ENC_NAILAMMO;
-		HDPickup.RefId HDLD_NAIL;
+		HDPickup.RefId "vnl";
 //		HDPickup.Bulk EncRound;
 	}
 	
@@ -308,7 +308,7 @@ class NailReloader:NailReloadingThingy{
 		inventory.pickupsound "misc/w_pkup";
 		inventory.pickupmessage "You got the nail repair machine!";
 		scale 0.5;
-		hdweapon.refid HDLD_NAILRL;
+		hdweapon.refid "vnr";
 		tag "Virid Inc. Nail repair device";
 	}
 	override double gunmass(){return 0;}

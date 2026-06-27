@@ -14,7 +14,7 @@ class VirDumbo:HDWeapon{
 		obituary "$OB_DUMBO";
 		hdweapon.barrelsize 27,1.6,3;
 		tag "$TAG_DUMBO";
-		hdweapon.refid HDLD_DUMBO;
+		hdweapon.refid "dmb";
 
 		hdweapon.ammo1 "WAN_20mmGrenadeAmmo",2;
 	}

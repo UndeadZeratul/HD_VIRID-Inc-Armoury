@@ -1,6 +1,0 @@
-Sprite "VBRNC0", 15, 27
-{
-	XScale 1.300
-	YScale 1.300
-	Patch "VBRNA0", 0, 0
-}

@@ -57,7 +57,7 @@ class HDCleaver:HDCoreBaseMeleeWeapon{
 		//+FLATSPRITE
 		DamageFunction (random(30,40));
 		tag "TAG_CLEAVER";
-		hdweapon.refid HDLD_CLEAVER;
+		hdweapon.refid "clv";
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse);}

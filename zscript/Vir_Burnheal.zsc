@@ -34,7 +34,7 @@ class VirBurnHeal :HDWoundFixer{
 		inventory.icon "VBRNC0";
 		scale 0.3;
 		tag "$TAG_BURNHEAL";
-		hdweapon.refid HDLD_BURNHEAL;
+		hdweapon.refid "vbh";
 
 		hdweapon.wornlayer 0;
 	}
