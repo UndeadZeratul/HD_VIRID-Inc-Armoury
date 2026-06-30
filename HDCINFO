@@ -28,7 +28,11 @@ addSpawnTableSingleEntry => { "tableName": "ArmorBonusReplaces", "name": "VirBab
 addSpawnTableSingleEntry => { "tableName": "HealthBonusReplaces", "name": "VirBabuSpray", "weight": "#SLG_BabusprayHealth_Spawns", "persists": "#SLG_Babuspray_Persistency" }
 
 //Sabre
-addSpawnTableSingleEntry => { "tableName": "ChainsawReplaces", "name": "SabreDrop", "weight": "#SLG_Sabre_Spawns", "persists": "#SLG_Sabre_Persistency" }
+newSpawnTable => { "spawnName": "Slogstin.SabreDrop" }
+addSpawnTableSingleEntry => { "tableName": "Slogstin.SabreDrop", "name": "SabreSheathDrop", "weight": "1", "persists": "#SLG_Sabre_Persistency" }
+addSpawnTableSingleEntry => { "tableName": "Slogstin.SabreDrop", "name": "VirSabre", "weight": "1", "persists": "#SLG_Sabre_Persistency" }
+
+addSpawnTableNestedEntry => { "tableName": "ChainsawReplaces", "name": "Slogstin.SabreDrop", "weight": "#SLG_Sabre_Spawns", "persists": "#SLG_Sabre_Persistency" }
 
 //Cleaver
 addSpawnTableSingleEntry => { "tableName": "ChainsawReplaces", "name": "HDCleaver", "weight": "#SLG_Cleaver_Spawns", "persists": "#SLG_Cleaver_Persistency" }
