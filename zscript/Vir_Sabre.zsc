@@ -593,6 +593,13 @@ class VirSabre:HDCoreBaseMeleeWeapon{
 		}
 	}
 	
+		action void A_NoDimensionalSheath(){
+		if(!countinv("VirSabreSheath")){
+			setweaponstate("nope");
+			A_WeaponMessage(StringTable.Localize("No more dimensional sheath. :)"),70);
+		}
+	}
+	
 	override void ForceBasicAmmo(){
 		owner.A_TakeInventory("VirSabreSheath");
 	}
@@ -818,7 +825,7 @@ class VirSabre:HDCoreBaseMeleeWeapon{
 				setweaponstate("horiswinghard");
 			}
 		else if(invoker.pressingaltreload()){
-				setweaponstate("stylehoriswing");
+				setweaponstate("stylecheckhori");
 			}
 		}
 		SBVR ABCD 2;
@@ -831,7 +838,7 @@ class VirSabre:HDCoreBaseMeleeWeapon{
 				setweaponstate("vertiswinghard");
 			}
 		else if(invoker.pressingaltreload()){
-				setweaponstate("stylesheath");
+				setweaponstate("stylecheckverti");
 			}
 		}
 		SBHR ABCD 2;
@@ -918,6 +925,13 @@ class VirSabre:HDCoreBaseMeleeWeapon{
 		SBST C 7;
 		goto stabrecoverswing;
 		
+	stylecheckverti:
+		SBRD A 0 A_NoDimensionalSheath();
+		goto stylevertiswing;
+		
+	stylecheckhori:
+		SBRD A 0 A_NoDimensionalSheath();
+		goto stylehoriswing;
 		
 	altreload:
 		SBRD A 0 A_SheathCheck();
