@@ -195,9 +195,9 @@ class HDCO2GrenadeAmmo:HDAmmo{
 	}
 	override void DetachFromOwner()
 	{
-		if(!(owner.player.ReadyWeapon is "HDCO2Grenades"))
+		if(owner && owner.player && !(owner.player.ReadyWeapon is "HDCO2Grenades"))
 		{
-			TakeInventory("HDCO2Grenades", 1);
+			owner.TakeInventory("HDCO2Grenades", 1);
 		}
 		super.DetachFromOwner();
 	}
