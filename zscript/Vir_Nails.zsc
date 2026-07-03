@@ -1,5 +1,5 @@
-const ENC_NAILAMMO=ENC_776*1.25;
-const ENC_NAILAMMO_LOADED=ENC_776*1.09;
+const ENC_NAILAMMO=ENC_776*0.95;
+const ENC_NAILAMMO_LOADED=ENC_776*0.8;
 
 class HDB_VIRNAIL : HDBulletActor
 {
@@ -7,12 +7,12 @@ class HDB_VIRNAIL : HDBulletActor
 	{
 		PushFactor 0.1;
 		gravity HDCONST_GRAVITY*0.7;
-		Mass 155;
-		Speed 120;
+		Mass 145;
+		Speed 140;
 		Accuracy 330;
 		Stamina 950;
 		WoundHealth 20;
-		HDBulletActor.Hardness 5;
+		HDBulletActor.Hardness 3;
 	}
 	
 override void HitGeometry(line hitline, sector hitsector, int hitside,

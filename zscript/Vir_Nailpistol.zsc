@@ -207,7 +207,7 @@ class VirNailPistol:HDWeapon{
 		goto ready;
 		
 	noyoudont:
-		#### # 0 A_StartSound("Weapons/nailgun/nope",CHAN_AUTO);
+		#### # 0;
 		goto nope;
 		
 	nobattery:
@@ -283,7 +283,7 @@ class VirNailPistol:HDWeapon{
 		#### H 0 A_JumpIf(invoker.weaponstatus[NLPS_LONG]>0,3);
 		#### H 1{
 			A_StartSound("Weapons/NPistol/fire",CHAN_WEAPON);
-			let bbb=HDBulletActor.FireBullet(self,"HDB_VIRNAIL",spread:1.15,speedfactor:frandom(0.65,0.72));
+			let bbb=HDBulletActor.FireBullet(self,"HDB_VIRNAIL",spread:0.9,speedfactor:frandom(0.69,0.77));
 			if(
 				frandom(0,ceilingz-floorz)<bbb.speed*0.3
 			)A_AlertMonsters(320);
@@ -299,7 +299,7 @@ class VirNailPistol:HDWeapon{
 		#### # 0 A_JumpIf(invoker.weaponstatus[NLPS_LONG]<=0,3);
 		#### H 1{
 			A_StartSound("Weapons/NPistol/firebig",CHAN_WEAPON);
-			let bbb=HDBulletActor.FireBullet(self,"HDB_VIRNAIL",spread:0.6,speedfactor:frandom(0.95,1.05));
+			let bbb=HDBulletActor.FireBullet(self,"HDB_VIRNAIL",spread:0.55,speedfactor:frandom(0.95,1.05));
 			if(
 				frandom(0,ceilingz-floorz)<bbb.speed*0.3
 			)A_AlertMonsters(420);
