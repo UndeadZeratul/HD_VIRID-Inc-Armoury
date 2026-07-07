@@ -23,8 +23,8 @@ class VirNailPistol:HDWeapon{
 		+hdweapon.reverseguninertia
 		obituary "$OB_NAILGUN";
 		weapon.selectionorder 24;
-		weapon.slotnumber 4;
-		weapon.slotpriority 10;
+		weapon.slotnumber 2;
+		weapon.slotpriority 15;
 		weapon.kickback 30;
 		weapon.bobrangex 0.3;
 		weapon.bobrangey 0.8;

@@ -48,7 +48,7 @@ class VirBatteryDynamo:HDWeapon{
 		weaponstatus[BCHD_CHARGETIK]--;
 	}
 
-	override string,double getpickupsprite(){return "BTRPY0",1.;}
+	override string,double getpickupsprite(){return "BTRDX0",1.;}
 	
 	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
 		if(sb.hudlevel==1){
