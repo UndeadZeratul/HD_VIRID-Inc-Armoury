@@ -223,7 +223,10 @@ class HDCleaver : HDCoreBaseMeleeWeapon {
 		
 		
 		hitcheckvertical:
-			TNT1 A 1 A_MeleeWeaponAttack(HDCMW_ATTACK_DOWN, dmg: 36);
+			TNT1 A 1 {
+				A_MeleeWeaponAttack(HDCMW_ATTACK_DOWN, dmg: 18);
+				A_MeleeWeaponAttack(HDCMW_ATTACK_DOWN, dmg: 18);
+			}
 			stop;
 		
 		hitcheckzerkvertical:
