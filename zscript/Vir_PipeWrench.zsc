@@ -84,7 +84,7 @@ class HDPipeWrench : HDCoreBaseMeleeWeapon {
 	}
 
 	override double getWeaponHeadShotDamageBonus() {
-		return frandom(2.3, 2.6);
+		return frandom(4.3, 4.6);
 	}
 
 	override int getWeaponHeadShotStun(int dmg) {
