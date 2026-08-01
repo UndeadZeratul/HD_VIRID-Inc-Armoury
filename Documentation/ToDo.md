@@ -4,7 +4,7 @@ Additional Content to be made:
 	- Death's Scythe				-	Very early in development, but works.
 	- VIRID Inc. Arrows				-	They're arrows.
 	- Viridian Longbow				-	It's a mess. Will need help with the quiver. Uses arrows
-	- Partisan						-	Long range melee weapon for poking enthusiasts. Almost not work done.
+	- Partisan						-	Long range melee weapon for poking enthusiasts. Almost no work done.
 	- E54 Reconnaissance Rifle		-	.300 Savage Rifle. Needs Sprites and polish.
 	- SB1 Stingray					-	30.06 Sniper Rifle. Not much work done.
 	- Viridian Crossbow				-	Oldschool crossbow that uses arrows and needs cranking.

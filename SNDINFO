@@ -96,3 +96,32 @@ $volume weapons/Vaswani/openair 0.4
 $volume weapons/Vaswani/closeair 0.05
 $volume weapons/Vaswani/warning 0.45
 $volume weapons/Vaswani/success 0.75
+
+//Yellow Jacket Shotgun
+weapons/YJshoot YJshoot
+weapons/YJopen YJopen
+$limit weapons/YJopen 0
+weapons/YJclose YJClose
+$limit weapons/YJclose 0
+
+//Longbow
+Bow/Pull "sounds/Longbow/BowPull.ogg"
+Bow/PullAlt "sounds/Longbow/BowPull2.ogg"
+Bow/Shoot "sounds/Longbow/BowShoot.ogg"
+Bow/Withdraw "sounds/Longbow/BowWithdraw.ogg"
+Bow/ArrowSlide "sounds/Longbow/BowArrowSlide.ogg"
+
+//TommyGun
+Tommy/Shoot				"sounds/TM25/TmyShoot.ogg"
+Tommy/Cock				"sounds/TM25/TmmyCock.ogg"
+Tommy/Uncock			"sounds/TM25/TmmyUncock.ogg"
+Tommy/Hit				"sounds/TM25/TmmyHit.ogg"
+
+//MP40
+mp40/Shoot				"sounds/MP40/GMP40.ogg"
+mp40/cock				"sounds/MP40/MP402.ogg"
+mp40/uncock				"sounds/MP40/MP401.ogg"
+$volume mp40/shoot 0.8
+$volume mp40/cock 0.8
+$volume mp40/uncock 0.8
+$alias mp40/Hit		Tommy/Hit
