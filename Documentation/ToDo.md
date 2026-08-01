@@ -1,30 +1,35 @@
-Additional Content to be finished (In order of importance):
+Additional Content to be made:
 	- Updated MP40					-	Needs polish
-	- Reworked 45LC Thompson		-	Will be a whole different weapon
-	- Death's Scythe				-	Very early in development
-	- Viridian Longbow				-	It's a mess
+	- TM25 SMG						-	My old .45LC Thompson, reworked into a different weapon.
+	- Death's Scythe				-	Very early in development, but works.
+	- VIRID Inc. Arrows				-	They're arrows.
+	- Viridian Longbow				-	It's a mess. Will need help with the quiver. Uses arrows
+	- Partisan						-	Long range melee weapon for poking enthusiasts. Almost not work done.
+	- E54 Reconnaissance Rifle		-	.300 Savage Rifle. Needs Sprites and polish.
+	- SB1 Stingray					-	30.06 Sniper Rifle. Not much work done.
+	- Viridian Crossbow				-	Oldschool crossbow that uses arrows and needs cranking.
+	- "Eleking" Rocket Launcher		-	Single tube thunder rocket launcher.
+	- "Gamera" Rocket Launcher		-	Like the Eleking, but with Tortoise Rockets.
+	- Diffusion Ice Missles			-	Small, weaker missles that deal "cold" damage and leave icy clouds that stun foes.
+	- Sub-zero Launcher				-	A fairly light missle Launcher with 4 tubes, featuring ice missles.
+	- Ice Ring Blaster				-	Handgun utilizing Micro Cells. It shoots icey rings that deal "cold" damage.
 	
-Content planned, but not started:
-	- Partisan						-	Long range melee weapon
-	- E54 Reconnaissance Rifle		-	.300 Savage rifle with 20mm grenade launcher
-	- SB1 Stingray					-	30.06 Sniper Rifle
-	- Viridian Longbow				-	It's a longbow
-	- Viridian Crossbow				-	Oldschool crossbow that uses arrows and needs cranking
-	- Zweihänder maybe?				-	Big, funny sword
+Content i'm on the fence about:
+	- Zweihänder					-	Big, funny sword
 	
 	
 Currently Added Content:
 	- Satya Light cannon
 	- Vaswani Light Cannon
-	- Nail ammo & Reloader			-	May need balance changes.
-	- Nail Pistol					-	Reloading battery is jank.
+	- Nail ammo & Reloader
+	- Nail Pistol
 	- Nailgun
-	- Queen Scattergun				-	Chamber can be loaded without holding altfire.
+	- Queen Scattergun				-	May need to finish the extra reload frame.
 	- Dumbo Grenade Launcher
 	- Sabre
 	- Pipe Wrench
 	- Cleaver
-	- Babuin Spray					-	Will have to look at closer. The whole burning gimmick is a mess.
+	- Babuin Spray					-	Will have to look at closer. The whole burning gimmick is a janky mess.
 	- Burn Heal
 	- CO2 Grenades
 	- Shield Badges

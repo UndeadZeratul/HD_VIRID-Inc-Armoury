@@ -1,0 +1,267 @@
+// ------------------------------------------------------------
+//	A polearm with incredible reach. Barely any work was done on it.
+//	It's also quite old.	--- Slogstin
+// ------------------------------------------------------------
+
+class HDImpaler:IdleDummy{
+	default{
+		+bloodlessimpact +nodecal +hittracer +puffonactors
+		stamina 1;
+	}
+}
+
+const HDLD_VSPEAR="VFP";
+
+class VirPartisan:HDSabreWeapon{
+	int targettimer;
+	int targethealth;
+	int targetspawnhealth;
+	bool flicked;
+	bool washolding;
+	
+		double initangleto;
+	double inittangle;
+	double inittz;
+	vector3 initpos;
+	vector3 initvel;
+	
+	default{
+		+WEAPON.MELEEWEAPON +WEAPON.NOALERT +WEAPON.NO_AUTO_SWITCH
+		+hdweapon.fitsinbackpack
+		//-hdweapon.dontnull
+		-weapon.cheatnotweapon
+		-nointeraction
+		-inventory.untossable
+		+forcepain
+		+forceXYbillboard
+		+rollsprite
+		+rollcenter
+		+hdweapon.reverseguninertia
+		+nodamagethrust
+		radius 3;height 3;
+		inventory.pickupmessage "You got the flying Partisan!";
+		hdweapon.barrelsize 10,1,1;
+		obituary "%o got impaled by %k.";
+		attacksound "*fist";
+		weapon.selectionorder 100;
+		weapon.kickback 15;
+		weapon.bobstyle "Alpha";
+		weapon.bobspeed 2.6;
+		weapon.bobrangex 0.1;
+		weapon.bobrangey 0.5;
+		weapon.slotnumber 1;
+		weapon.slotpriority 2.1;
+		scale 0.6;
+		//+FLATSPRITE
+		DamageFunction (random(30,40));
+		tag "Flying Partisan";
+		hdweapon.refid HDLD_SPEAR;
+	}
+	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
+	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse);}
+	
+	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
+		let ww=VirPartisan(hdw);
+		if(ww.targethealth)sb.drawwepnum(ww.targethealth,ww.targetspawnhealth);
+	}
+	override string gethelptext(){
+		return
+		WEPHELP_FIRE.."  Stab\n"
+		..WEPHELP_ALTFIRE.."   Double Stab\n"
+		..WEPHELP_RELOAD.."   Flourish\n"
+		..WEPHELP_FIREMODE.."   Prepare throw\n"
+		//..WEPHELP_UNLOAD.."   Distracting projectile\n"
+		;
+	}
+	
+	override string,double getpickupsprite(){return "KNFPZ0",0.35;}
+	
+	override double weaponbulk(){
+		return 80;
+	}
+	override double gunmass(){
+		return 9;
+	}
+	
+	action void A_Lunge(){
+		hdplayerpawn hdp=hdplayerpawn(self);
+		if(hdp){
+			if(hdp.fatigue>=30){setweaponstate("hold");return;}
+			else hdp.fatigue+=3;
+		}
+		A_Recoil(min(hdp.overloaded*0.6,4.)-4.);
+	}
+	
+	//for throwing a weapon
+	override inventory CreateTossable(int amt){
+		let onr=hdplayerpawn(owner);
+		bool throw=(
+			onr
+			&&onr.player
+			&&onr.player.cmd.buttons&BT_ZOOM
+		);
+		bool isreadyweapon=onr&&onr.player&&onr.player.readyweapon==self;
+		if(!isreadyweapon)throw=false;
+		let thrown=super.createtossable(amt);
+		if(!thrown)return null;
+		let newwep=GetSpareWeapon(onr,doselect:isreadyweapon);
+		hdweapon(thrown).bjustchucked=true;
+		thrown.target=onr;
+		thrown.lastenemy=onr;
+		if(throw){
+			thrown.bmissile=true;
+			//a_setangle(-90+angle);
+			thrown.bFLATSPRITE=true;
+			thrown.bNOEXTREMEDEATH=true;
+			thrown.bBOUNCEAUTOOFF=true;
+		}else{
+			thrown.bmissile=false;
+			thrown.bFLATSPRITE=false;
+			thrown.bNOEXTREMEDEATH=false;
+			thrown.bBOUNCEAUTOOFF=false;
+			}
+		return thrown;
+	}
+	//an override is needed because DropInventory will undo anything done in CreateTossable
+	double throwvel;
+	override void OnDrop(Actor dropper){
+		if(bjustchucked&&target){
+			double cp=cos(target.pitch);
+			if(bmissile){
+				vel=target.vel+
+					(cp*(cos(target.angle),sin(target.angle)),-sin(target.pitch))
+					*min(20,800/weaponbulk())
+					*(hdplayerpawn(target)?hdplayerpawn(target).strength:1.)
+				;
+			}else vel=target.vel+(cp*(cos(target.angle),sin(target.angle)),-sin(target.pitch))*4;
+			throwvel=vel dot vel;
+			bjustchucked=false;
+		}
+
+		//copypasted from HDPickup
+		if(dropper){
+			setz(dropper.pos.z+dropper.height*0.8);
+			if(!bmissile){
+				double dp=max(dropper.pitch-6,-90);
+				vel=dropper.vel+(
+					cos(dp)*(cos(dropper.angle),sin(dropper.angle)),
+					-sin(dp)
+				)*3;
+			}
+			HDBackpack.ForceUpdate(dropper);
+		}
+	}
+
+	override void DoEffect(){
+		super.DoEffect();
+		if(targettimer<70)targettimer++;else{
+			tracer=null;
+			targettimer=0;
+			targethealth=0;
+		}
+	}
+	action void HDStabShort(double dmg){
+		flinetracedata punchline;
+		
+		A_StartSound("misc/fwoosh",CHAN_WEAPON,CHANF_OVERLAP,volume:0.024,pitch:1.5);
+		
+		bool punchy=linetrace(
+			angle,85,pitch,
+			TRF_NOSKY,
+			offsetz:height-12,
+			data:punchline
+		);
+		if(!punchy)return;
+
+		//actual puff effect if the shot connects
+		LineAttack(angle,54,pitch,punchline.hitline?(countinv("HDZerk")>PBZERK_COOLOFF?random(50,120):random(5,15)):0,"none",
+			countinv("HDZerk")>PBZERK_COOLOFF?"BulletPuffMedium":"BulletPuffSmall",
+			flags:LAF_NORANDOMPUFFZ|LAF_OVERRIDEZ,
+			offsetz:height-12
+		);
+
+		if(!punchline.hitactor){
+			HDF.Give(self,"WallChunkAmmo",1);
+			return;
+		}
+		actor punchee=punchline.hitactor;
+
+		//charge!
+		if(invoker.flicked)dmg*=1.5;
+		else dmg+=HDMath.TowardsEachOther(self,punchee)*2;
+
+		//come in swinging
+		let onr=hdplayerpawn(self);
+		if(onr){
+			int iy=max(abs(player.cmd.pitch),abs(player.cmd.yaw));
+			if(iy>0)iy*=100;
+			else if(iy<0)iy*=200;
+			dmg+=min(abs(iy),dmg*2);
+
+			//need to be well grounded
+			if(floorz<pos.z)dmg*=0.5;
+		}
+
+		//shit happens
+		HDBleedingWound.inflict(punchee,int(dmg*=invoker.strength*frandom(1.2,1.6)),frandom(5,8));
+
+		if(punchee.bnoblood)
+		{
+			punchee.A_StartSound("weapons/kharonwall",CHAN_7,CHANF_OVERLAP,volume:0.5,pitch:1.1);
+		}
+		else
+		{
+			punchee.A_StartSound("weapons/kharoncut",CHAN_7,CHANF_OVERLAP,volume:0.5,pitch:1.1);
+		}
+
+		//other effects
+		if(
+			onr
+			&&!punchee.bdontthrust
+			&&(
+				punchee.mass<200
+				||(
+					punchee.radius*2<punchee.height
+					&& punchline.hitlocation.z>punchee.pos.z+punchee.height*0.6
+				)
+			)
+		){
+			double iyaw=player.cmd.yaw*(65535./360.);
+			if(abs(iyaw)>(0.5)){
+				punchee.A_SetAngle(punchee.angle-iyaw*100,SPF_INTERPOLATE);
+			}
+			double ipitch=player.cmd.pitch*(65535./360.);
+			if(abs(ipitch)>(0.5*65535/360)){
+				punchee.A_SetPitch(punchee.angle+ipitch*100,SPF_INTERPOLATE);
+			}
+		}
+		//headshot lol
+		if(
+			!punchee.bnopain
+			&& punchee.health>0
+			&& !(punchee is "HDBarrel")
+			&& punchee.findstate("pain")
+			&& punchline.hitlocation.z>punchee.pos.z+punchee.height*0.75
+		){
+			if(hd_debug)A_Log("HEAD SHOT");
+			punchee.setstatelabel("pain");
+			dmg*=frandom(2.1,2.3); 
+			HDBleedingWound.inflict(punchee,5,frandom(5,8),true);
+			//i am very sure getting stabbed in the head would be very fatal
+		}
+
+		if(hd_debug){
+			string pch="";
+			if(punchee.player)pch=punchee.player.getusername();
+				else pch=punchee.getclassname();
+			A_Log(string.format("Punched %s for %i damage!",pch,dmg));
+		}
+		if(punchee.health>0)punchee.damagemobj(self,self,int(dmg),"slashing");
+		//else HDF.Give(punchee,"SawGib",dmg*0.2);
+
+		if(!punchee)invoker.targethealth=0;else{
+			invoker.targethealth=punchee.health;
+			invoker.targetspawnhealth=punchee.spawnhealth();
+			invoker.targettimer=0;
+		}
+	}

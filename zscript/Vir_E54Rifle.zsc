@@ -1,0 +1,413 @@
+// ------------------------------------------------------------
+//	Liberator-like rifle chambered in .300 Savage, with a 20mm grenade launcher
+//	Name and future sprites based on Overwatch's Bastion.	--- Slogstin
+// ------------------------------------------------------------
+
+class VirE54:HDWeapon{
+	default{
+		//$Category "Weapons/Hideous Destructor"
+		//$Title "Liberator"
+		//$Sprite "BRFLB0"
+
+		-hdweapon.fitsinbackpack
+		weapon.slotnumber 6;
+		weapon.slotpriority 4;
+		weapon.kickback 20;
+		weapon.selectionorder 27;
+		inventory.pickupsound "misc/w_pkup";
+		inventory.pickupmessage "$PICKUP_E54";
+		weapon.bobrangex 0.22;
+		weapon.bobrangey 0.9;
+		scale 0.7;
+		obituary "$OB_E54";
+		hdweapon.refid "e54";
+		tag "$TAG_E54";
+		inventory.icon "BRFLB0";
+
+		hdweapon.ammo1 "VirE54Mag",1;
+		hdweapon.ammo2 "WAN_20mmGrenadeAmmo",1;
+
+//		hdweapon.loadoutcodes "
+	//		\cusemi - 0/1, whether it is limited to semi
+	//		\cufiremode - 0/1, whether you start in full auto
+	}
+	
+	override void LoadoutConfigure(string input)
+	{
+		InitializeWepStats();
+		if (GetLoadoutVar(input, "semi", 1) > 0) {
+			weaponStatus[E54F_NOAUTO]=1;
+		}else {weaponStatus[E54F_NOAUTO]=0;}
+		if (GetLoadoutVar(input, "firemode", 1) > 0) {
+			weaponStatus[E54F_FULLAUTO]=1;
+		}else {weaponStatus[E54F_FULLAUTO]=0;}
+	}
+	
+	override void initializewepstats(bool idfa){
+		weaponstatus[E54F_GRENADELOADED]=1;
+		weaponstatus[E54S_CHAMBER]=2;
+		weaponstatus[E54S_MAG]=25;
+	}
+	
+	override void tick(){
+		super.tick();
+		drainheat(E54S_HEAT,4);
+	}
+	
+	override void postbeginplay(){
+		super.postbeginplay();
+		weaponspecial=1337; //UaS stabilizer compatibility
+	}
+	
+	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
+	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}
+	
+	override double gunmass(){return 14;}
+	override double weaponbulk(){return 140;}
+	
+	override void failedpickupunload(){
+        failedpickupunloadmag(QUEN_MAG,"VirE54Mag");
+    }	
+	override void ForceBasicAmmo(){
+		owner.A_TakeInventory("Savage300Ammo");
+		owner.A_TakeInventory("WAN_20mmGrenadeAmmo",1);
+		ForceOneBasicAmmo("VirE54Mag");
+	}
+	
+	override string gethelptext(){
+        LocalizeHelp();
+        return
+        LWPHELP_FIRE..StringTable.Localize("$E54_FIRE")
+		..LWPHELP_ALTFIRE..StringTable.Localize("$E54_ALTFIRE")
+        ..LWPHELP_RELOAD..StringTable.Localize("$E54_RELOAD")
+        ..LWPHELP_ALTRELOAD..StringTable.Localize("$E54_ALTRELOAD")
+		..LWPHELP_UNLOADUNLOAD
+        ..LWPHELP_MAGMANAGER;
+    }
+	
+	override void DrawSightPicture(
+        HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl,
+        bool sightbob,vector2 bob,double fov,bool scopeview,actor hpc
+    ){
+        int cx,cy,cw,ch;
+        [cx,cy,cw,ch]=screen.GetClipRect();
+        vector2 scc;
+        vector2 bobb=bob*1.15;
+
+        //if slide is pushed back, throw sights off line
+        
+        sb.SetClipRect(
+			-15+bob.x,-16+bob.y,27,29,
+				sb.DI_SCREEN_CENTER
+			);
+			scc=(0.6,0.6);
+ 
+        sb.drawimage(
+            "QNFNTSIT",(0,0)+bobb,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP,
+            scale:scc
+        );
+        sb.SetClipRect(cx,cy,cw,ch);
+        sb.drawimage(
+            "QNBAKSIT",(0,0)+bob,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP,
+            alpha:0.9,
+            scale:scc
+        );
+    }
+	
+	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
+        if(sb.hudlevel==1){
+			int nextmagloaded=sb.GetNextLoadMag(hdmagammo(hpl.findinventory("VirE54Mag")));
+			if(nextmagloaded>15){
+                sb.drawimage("QENMA0",(-46,-3),sb.DI_SCREEN_CENTER_BOTTOM);
+            }else if(nextmagloaded<1){
+                sb.drawimage("QENMC0",(-46,-3),sb.DI_SCREEN_CENTER_BOTTOM);
+            }else sb.drawbar(
+                "QENMA0","QENMC0",
+                nextmagloaded,15,
+                (-46,-3),-1,
+                sb.SHADER_VERT,sb.DI_SCREEN_CENTER_BOTTOM
+            );
+			sb.drawnum(hpl.countinv("VirE54Mag"),-43,-8,sb.DI_SCREEN_CENTER_BOTTOM);
+
+			int sevenrounds=hpl.countinv("WAN_20mmGrenadeAmmo");
+			sb.drawimage("MA7GA0",(-62,-4),sb.DI_SCREEN_CENTER_BOTTOM,alpha:sevenrounds?1:0.6,scale:(1.2,1.2));
+			sb.drawnum(sevenrounds,-56,-8,sb.DI_SCREEN_CENTER_BOTTOM);
+        }
+        sb.drawwepnum(hdw.weaponstatus[E54S_MAG],25);
+        if(hdw.weaponstatus[E54S_CHAMBER]>1){
+			sb.drawrect(-22,-12,4,2);
+			sb.drawrect(-17,-12,1,2);
+		}
+		else if(hdw.weaponstatus[E54S_CHAMBER]>0){
+			sb.drawrect(-17,-12,1,2);
+		}
+		if(hdw.weaponstatus[E54F_NOAUTO]<=0){
+			string llba="RBRSA3A7";
+			if(hdw.weaponstatus[E54F_FULLAUTO]>0)llba="STFULAUT";
+			sb.drawimage(
+				llba,(-22,-10),
+				sb.DI_SCREEN_CENTER_BOTTOM|sb.DI_TRANSLATABLE|sb.DI_ITEM_RIGHT
+			);
+		}
+		if(hdw.weaponstatus[E54F_GRENADELOADED]>0)sb.drawrect(-20,-15.6,4,2.6);
+	}
+		
+			action void A_Fire20mmGL(string firingsound="weapons/grenadeshot"){
+		A_StartSound(firingsound,CHAN_WEAPON,CHANF_OVERLAP);
+		vector3 gpos=pos+gunpos((0,0,-getdefaultbytype("WAN_20mmgrenade").height*0.6));
+		let ggg=WAN_20mmgrenade(spawn("WAN_20mmgrenade",gpos,ALLOW_REPLACE));
+
+//		ggg.speed*=1.45;
+
+		let hdp=hdplayerpawn(self);
+		if(hdp){
+			ggg.angle=hdp.gunangle;
+			ggg.pitch=hdp.gunpitch-2.5;
+		}else{
+			ggg.angle=angle;
+			ggg.pitch=pitch-2.5;
+		}
+
+		ggg.target=self;ggg.master=self;
+		ggg.primed=false;
+		if(invoker.airburst){
+			ggg.airburst=max(1000,invoker.airburst)*HDCONST_ONEMETRE*0.01;
+			if(!player||!(player.cmd.buttons&BT_ZOOM))invoker.airburst=0;
+		}
+    }
+	
+	states{
+	select0:
+        BRFG A 0;
+        goto select0big;
+
+    deselect0:
+        BRFG A 0;
+        goto deselect0big;
+
+    ready:
+        BRFG A 0;
+        #### # 0 A_SetCrosshair(21);
+        #### # 1 A_WeaponReady(WRF_ALL);
+        goto readyend;
+    user3:
+        ---- A 0 A_MagManager("VirE54Mag");
+        goto ready;
+		
+	firemode:
+		---- A 0{
+			if(invoker.weaponstatus[E54F_NOAUTO]<=0 && invoker.weaponstatus[E54F_FULLAUTO]<=0){
+				invoker.weaponstatus[E54F_FULLAUTO]=1;
+			}else{
+				invoker.weaponstatus[E54F_FULLAUTO]=0;
+			}
+		}goto nope;
+		
+	fire:
+		BRFG A 0{
+			if(invoker.weaponstatus[E54S_CHAMBER]<=1)setweaponstate("loadchamber");
+		}
+	shoot:
+		BRFG A 1;
+		#### # 0 {
+			if(invoker.weaponstatus[E54S_CHAMBER]>=2)A_GunFlash();
+			else setweaponstate("nope");
+		}
+		#### A 1{
+			if(hdplayerpawn(self)){
+				hdplayerpawn(self).gunbraced=false;
+			}
+			A_MuzzleClimb(
+				-frandom(0.85,1.0),-frandom(1.05,1.3),
+				frandom(0.5,0.55),frandom(0.7,0.8)
+			);
+		}
+		#### A 1 {
+			if(invoker.weaponstatus[E54S_MAG]>0){
+				invoker.weaponstatus[E54S_MAG]--;
+				invoker.weaponstatus[E54S_CHAMBER]=2;
+			}
+		}
+		#### A 3;
+		#### # 0 {
+			if(invoker.weaponstatus[E54F_NOAUTO]>0 || invoker.weaponstatus[E54F_FULLAUTO]<=0)setweaponstate("nope");
+		}
+		#### A 1{
+			A_WeaponReady(WRF_NOFIRE);
+			A_Refire("fire");
+		}
+		#### # 1;
+		goto ready;
+	flash:
+		BRFF A 0;
+		---- A 1{
+			A_Light1();
+			A_StartSound("weapons/bigrifle",CHAN_WEAPON);
+			let bbb=HDBulletActor.FireBullet(self,"HDB_300Savage",spread:0.35,speedfactor:frandom(0.92,0.98));
+			if(
+				frandom(0,ceilingz-floorz)<bbb.speed*0.3
+			)A_AlertMonsters();
+
+			A_ZoomRecoil(1.100);
+			A_MuzzleClimb(-frandom(0,0.2),-frandom(0,0.6));
+			
+			invoker.weaponstatus[E54S_CHAMBER]=0;
+			invoker.weaponstatus[E54S_HEAT]+=7;
+			
+			A_EjectCasing("SpentSavage300"
+                ,frandom(-1,2),
+                (frandom(0.4,0.7),-frandom(6,7),frandom(0.8,1))
+            );
+		}
+		stop;
+		
+	altfire:
+	grenadeshoot:
+		BRFG A 0 {
+			if(invoker.weaponstatus[E54F_GRENADELOADED]<1)setweaponstate("nope");
+		}
+		#### # 1 {
+			A_Fire20mmGL(firingsound:"weapons/dumbo");
+			invoker.weaponstatus[E54F_GRENADELOADED]=0;
+		}
+		goto nope;
+		
+	unload:
+		#### A 0{
+			invoker.weaponstatus[0]|=E54F_JUSTUNLOAD;
+			if(invoker.weaponstatus[E54S_MAG]>=0)setweaponstate("unmag");
+		}goto nope;
+		
+	reload:
+		#### A 0{
+			invoker.weaponstatus[0]&=~E54F_JUSTUNLOAD;
+			bool nobattery=HDMagAmmo.NothingLoaded(self,"VirE54Mag");
+			if(invoker.weaponstatus[E54S_MAG]>=25)setweaponstate("nope");
+			else if(invoker.weaponstatus[E54S_MAG]<1 &&(pressinguse() || nobattery));
+			else if(nobattery)setweaponstate("nope");
+		}goto unmag;
+	unmag:
+		#### A 1 offset(0,34) A_SetCrosshair(21);
+		#### B 2 offset(1,38);
+		#### B 3 offset(2,42);
+		#### B 4 offset(3,46) A_StartSound("weapons/rifleunload",8,CHANF_OVERLAP);
+		#### B 0{
+			int pmg=invoker.weaponstatus[E54S_MAG];
+			invoker.weaponstatus[E54S_MAG]=-1;
+			if(pmg<0)setweaponstate("magout");
+			else if(
+				(!PressingUnload()&&!PressingReload())
+				||A_JumpIfInventory("VirE54Mag",0,"null")
+			){
+				HDMagAmmo.SpawnMag(self,"VirE54Mag",pmg);
+				setweaponstate("magout");
+			}
+			else{
+				HDMagAmmo.GiveMag(self,"VirE54Mag",pmg);
+				A_StartSound("weapons/pocket",9);
+				setweaponstate("pocketmag");
+			}
+		}
+	pocketmag:
+		#### BBB 7 offset(0,46) A_MuzzleClimb(frandom(-0.2,0.8),frandom(-0.2,0.4));
+		goto magout;
+	magout:
+		#### B 0{
+			if(invoker.weaponstatus[0]&E54F_JUSTUNLOAD)setweaponstate("reloadend");
+			else setweaponstate("loadmag");
+		}
+
+	loadmag:
+		#### B 6 offset(0,46) A_MuzzleClimb(frandom(-0.2,0.8),frandom(-0.2,0.4));
+		#### B 0 A_StartSound("weapons/pocket",9);
+		#### B 5 offset(0,46) A_MuzzleClimb(frandom(-0.2,0.8),frandom(-0.2,0.4));
+		#### B 4;
+		#### B 0{
+			let mmm=hdmagammo(findinventory("VirE54Mag"));
+			if(mmm){
+				invoker.weaponstatus[E54S_MAG]=mmm.TakeMag(true);
+				A_StartSound("weapons/rifleload",8);
+			}
+		}
+		goto reloadend;
+
+	reloadend:
+		#### B 5 offset(3,46);
+		#### A 4 offset(2,42);
+		#### A 2 offset(2,38);
+		#### A 1 offset(1,34);
+//		---- A 0 A_JumpIf(!(invoker.weaponstatus[0]&E54F_JUSTUNLOAD),"chamber_manual");
+		goto nope;
+
+		
+	unloadchamber:
+		BRFG B 1 offset(-1,34){
+			if(
+				invoker.weaponstatus[E54S_CHAMBER]<1
+			)setweaponstate("nope");
+		}
+		BRFG B 1 offset(-2,36);
+		BRFG B 1 offset(-2,38);
+		BRFG A 1 offset(-1,34);
+		goto nope;
+		
+	loadchamber:
+		BRFG A 0 A_JumpIf(invoker.weaponstatus[E54S_MAG]<=0 || invoker.weaponstatus[E54S_CHAMBER]>=2,"nope");
+		BRFG A 1 offset(0,34);
+		BRFG A 2 offset(2,36);
+		BRFG A 0 {
+			invoker.weaponstatus[E54S_MAG]--;
+			invoker.weaponstatus[E54S_CHAMBER]=2;
+			A_StartSound("weapons/libchamber2",8);
+		}
+		BRFG B 2 offset(5,37);
+		BRFG B 2 offset(2,36);
+		BRFG A 1 offset(0,34);
+		goto readyend;
+		
+	spawn:
+		BRFL A -1;
+		stop;
+	}
+}
+
+enum e54status{
+	E54F_FLAGS=0,
+	E54F_JUSTUNLOAD=1,
+	E54F_FULLAUTO=2,
+	E54F_GRENADELOADED=3,
+	E54F_NOAUTO=4,
+
+	E54S_CHAMBER=5,
+	E54S_MAG=6,
+	E54S_HEAT=7,
+};
+
+class VirE54Mag:HDMagAmmo{
+	default{
+
+		hdmagammo.maxperunit 25;
+		hdmagammo.roundtype "Savage300Ammo";
+		hdmagammo.roundbulk ENC_776_LOADED;
+		hdmagammo.magbulk ENC_776MAG_EMPTY*0.9;
+		tag "$E54MAG_TAG";
+		inventory.pickupmessage "$E54MAG_PICKUP";
+		hdpickup.refid "54M";
+		scale 0.5;
+	}
+	override string,string,name,double getmagsprite(int thismagamt){
+		string magsprite=(thismagamt>0)?"QENMA0":"QENMB0";
+		return magsprite,"RBRSA0","Savage300Ammo",0.7;
+	}
+	override void GetItemsThatUseThis(){
+		itemsthatusethis.push("VirE54");
+	}
+	states{
+	spawn:
+		QENM A -1;
+		stop;
+	spawnempty:
+		QENM B -1; //A_SpawnEmpty();
+		stop;
+	}
+}

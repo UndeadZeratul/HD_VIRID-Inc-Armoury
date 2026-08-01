@@ -1,0 +1,101 @@
+const ENC_ARROWAMMO=ENC_776*3;
+const ENC_ARROWAMMO_LOADED=ENC_776*2.3;
+
+class VirB_ARROW : HDBulletActor
+{
+	Default
+	{
+		PushFactor 0.375;
+		gravity HDCONST_GRAVITY*0.5;
+		Mass 200;
+		Speed 100;
+		Accuracy 250;
+		Stamina 1143;
+		WoundHealth 15;
+		HDBulletActor.Hardness 6;
+	}
+	states{
+	spawn:
+		MISL A -1;
+		stop;
+	}
+}
+
+class VirArrowAmmo : HDRoundAmmo
+{
+	override void SplitPickup()
+	{
+		SplitPickupBoxableRound(3, 15, "VirArrowBox", "TEN9A0", "PRNDA0");
+	}
+
+	Default
+	{
+		+INVENTORY.IGNORESKILL
+		+CANNOTPUSH
+//		+FORCEXYBILLBOARD
+		+ROLLSPRITE
+		+ROLLCENTER
+		+HDPICKUP.MULTIPICKUP
+		XScale 0.9;
+		YScale 0.8;
+		Tag "$TAG_ARROW";
+		Inventory.icon "TEN9A0";
+		Inventory.PickupMessage "$PICKUP_ARROW";
+		hdpickup.bulk ENC_ArrowAMMO;
+		HDPickup.RefId "VAW";
+//		HDPickup.Bulk EncRound;
+	}
+	
+	States
+	{
+		Spawn:
+			PRND A -1;
+			TEN9 A -1;
+			Stop;
+	}
+}
+
+
+class VirArrowBox : HDUPK
+{
+	Default
+	{
+		Scale 0.32;
+		Tag "$TAG_ARROWBOX";
+		HDUPK.Amount 15;
+		HDUPK.PickupSound "weapons/pocket";
+		HDUPK.PickupMessage "$PICKUP_ARROWBOX";
+		HDUPK.PickupType "VirArrowAmmo";
+	}
+
+	states
+	{
+		Spawn:
+			50AE X -1;
+			Stop;
+	}
+}
+
+
+class VirArrowBundle : IdleDummy
+{
+	Default
+	{
+	Tag "$TAG_ARROWBUNDLE";
+	}
+
+	States
+	{
+		Spawn:
+			SLUG A 0 NoDelay
+			{
+				let iii = hdpickup(Spawn("VirArrowAmmo", pos, ALLOW_REPLACE));
+				iii.amount = 3;
+				iii.special = special;
+				iii.ChangeTID(tid);
+				iii.angle = angle;
+				iii.vel = vel;
+			}
+			Stop;
+	}
+}

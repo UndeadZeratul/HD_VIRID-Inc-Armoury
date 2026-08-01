@@ -20,3 +20,14 @@ version "4.14"
 #include "zscript/Vir_ShieldBadge.zsc"
 #include "zscript/Vir_BabuSpray.zsc"
 #include "zscript/Vir_BatteryDynamo.zsc"
+
+//----- Unfinished -----
+//#include "zscript/Vir_Stingray.zsc"
+//#include "zscript/Vir_E54Rifle.zsc"
+//#include "zscript/Vir_Longbow.zsc"
+//#include "zscript/Vir_YellowJacket.zsc"
+//#include "zscript/Vir_Partisan.zsc"
+//#include "zscript/Vir_TM25.zsc"
+//#include "zscript/Vir_Scythe.zsc"
+//#include "zscript/Vir_MP40.zsc"
+//#include "zscript/Vir_Arrows.zsc"		//-----	Always enable with the Longbow!
